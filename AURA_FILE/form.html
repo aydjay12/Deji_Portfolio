@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/ARUA.jpeg.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- <script defer src="/node_modules/swup/dist/Swup.modern.js"></script> -->
+    <title>ARUA | Form</title>
+    <style>
+        *{
+            font-family: 'Kumbh Sans', sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container img{
+            width: 100%;
+            margin-left: .4em;
+        }
+        .body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-1{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            padding: 2em;
+            padding-bottom: 7em;
+        }
+        #page-1 h2{
+            text-align: center;
+            padding-top: .3em;
+        }
+        #page-2{
+            display: none;
+        }
+        #page-3{
+            display: none;
+        }
+        #page-4{
+            display: none;
+        }
+        #page-5{
+            display: none;
+        }
+        #page-6{
+            display: none;
+        }
+        #page-7{
+            display: none;
+        }
+        #page-8{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        .question-1{
+            margin-bottom: 1em;
+            letter-spacing: 2px;
+        }
+        .input-1{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 1em;
+        }
+        .input-1 input{
+            background: transparent;
+            border: 1px solid rgb(214,180,26);
+            border-radius: 6px;
+            padding-left: 15px;
+            height: 6vh;
+            backdrop-filter: blur(20px);
+            outline: none;
+        }
+        .input-1 input::placeholder{
+            letter-spacing: 2px;
+        }
+        .prev{
+            display: none;
+        }
+        .buttons{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 14em;
+            margin-top: 1em;
+        }
+        .buttons button{
+            width: 100%;
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: .5em;
+            background: rgb(214,180,26);
+            color: rgb(67, 55, 1);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .buttons-2{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 14em;
+            margin-top: 1em;
+            grid-gap: 22.5em;
+            position: relative;
+        }
+        .buttons-2 button{
+            width: 100%;
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: .5em;
+            background: rgb(214,180,26);
+            color: rgb(67, 55, 1);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            position: absolute;
+            width: 20%;
+            right: 0;
+        }
+        .buttons-3{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 14em;
+            margin-top: 1em;
+            grid-gap: 22.5em;
+            position: relative;
+        }
+        .buttons-3 button{
+            width: 100%;
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: .5em;
+            background: rgb(214,180,26);
+            color: rgb(67, 55, 1);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            position: absolute;
+            width: 20%;
+            left: 0;
+        }
+        .content-2{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            padding: 2em;
+            opacity: 1;
+            transition: 500ms;
+        }
+        html.is-animating .content-2{
+            opacity: 0;
+        }
+        .question-2{
+            margin-bottom: 1em;
+            letter-spacing: 2px;
+        }
+        .input-2{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 1em;
+        }
+        .input-2 input{
+            background: transparent;
+            border: 1px solid rgb(214,180,26);
+            border-radius: 6px;
+            padding-left: 15px;
+            height: 6vh;
+            backdrop-filter: blur(20px);
+            outline: none;
+        }
+        .input-2 input::placeholder{
+            letter-spacing: 2px;
+        }
+        .content-3{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            padding: 2em;
+        }
+        .question-3{
+            margin-bottom: 1em;
+            letter-spacing: 2px;
+        }
+        .input-3{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 1em;
+        }
+        .input-3 input{
+            background: transparent;
+            border: 1px solid rgb(214,180,26);
+            border-radius: 6px;
+            padding-left: 15px;
+            height: 6vh;
+            backdrop-filter: blur(20px);
+            outline: none;
+        }
+        .input-3 input::placeholder{
+            letter-spacing: 2px;
+        }
+        .content-4{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            padding: 2em;
+        }
+        .question-4{
+            margin-bottom: 1em;
+            letter-spacing: 2px;
+        }
+        .input-4{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 1em;
+        }
+        .input-4 div{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1em;
+        }
+        .input-4 input{
+            background: transparent;
+            border: 1px solid rgb(214,180,26);
+            border-radius: 6px;
+            padding-left: 15px;
+            height: 6vh;
+            backdrop-filter: blur(20px);
+            outline: none;
+        }
+        .input-4 input::placeholder{
+            letter-spacing: 2px;
+        }
+        .input-4 select{
+            background: transparent;
+            border: 1px solid rgb(214,180,26);
+            border-radius: 6px;
+            padding-left: 15px;
+            height: 6vh;
+            backdrop-filter: blur(20px);
+            outline: none;
+        }
+        .input-4 select::placeholder{
+            letter-spacing: 2px;
+        }
+        .content-5{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            padding: 2em;
+        }
+        .question-5{
+            margin-bottom: 1em;
+            letter-spacing: 2px;
+        }
+        .input-5{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 1em;
+        }
+        .input-5 textarea{
+            background: transparent;
+            border-radius: 6px;
+            padding-top: 12px;
+            padding-left: 15px;
+            height: 30vh;
+            border: 1px solid rgb(214,180,26);
+            backdrop-filter: blur(20px);
+            outline: none;
+        }
+        .input-5 textarea::placeholder{
+            letter-spacing: 2px;
+        }
+        .content-6{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            padding: 2em;
+        }
+        .question-6{
+            margin-bottom: 1em;
+            letter-spacing: 2px;
+        }
+        .input-6{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 1em;
+        }
+        .input-6 select{
+            background: transparent;
+            border: 1px solid rgb(214,180,26);
+            border-radius: 6px;
+            padding-left: 15px;
+            height: 6vh;
+            backdrop-filter: blur(20px);
+            outline: none;
+        }
+        .input-6 select::placeholder{
+            letter-spacing: 2px;
+        }
+        .input-6 input{
+            background: transparent;
+            border: 1px solid rgb(214,180,26);
+            border-radius: 6px;
+            padding-left: 15px;
+            height: 6vh;
+            backdrop-filter: blur(20px);
+            outline: none;
+        }
+        .input-6 input::placeholder{
+            letter-spacing: 2px;
+        }
+        .content-7{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            padding: 2em;
+        }
+        .question-7{
+            margin-bottom: 1em;
+            letter-spacing: 2px;
+        }
+        .input-7{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 1em;
+        }
+        .input-7 select{
+            background: transparent;
+            border: 1px solid rgb(214,180,26);
+            border-radius: 6px;
+            padding-left: 15px;
+            height: 6vh;
+            backdrop-filter: blur(20px);
+            outline: none;
+        }
+        .input-7 select::placeholder{
+            letter-spacing: 2px;
+        }
+        .content-8{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            padding: 2em;
+        }
+        .question-8{
+            margin-bottom: 1.5em;
+            letter-spacing: 2px;
+        }
+        .input-8{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1em;
+        }
+        .input-8 div{
+            display: flex;
+            width: 20%;
+            justify-content: space-around;
+        }
+        .input-8 input{
+            cursor: pointer;
+            width: 20%;
+        }
+        .register{
+            width: 20%;
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: .5em;
+            background: rgb(214,180,26);
+            color: rgb(67, 55, 1);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 4em;
+            letter-spacing: 2px;
+        }
+        @media (min-width: 360px){
+            .input-1{
+                grid-template-columns: 1fr;
+                width: 100%;
+            }
+            .input-1 input{
+                width: 100%;
+            }
+            .body{
+                padding-left: 1em;
+            }
+            .container img{
+                width: 45%;
+            }
+            .buttons{
+                justify-content: space-between;
+            }
+        }
+        @media (min-width: 768px){
+            .container img{
+                width: 22%;
+            }
+            .input-1{
+                grid-template-columns: 1fr 1fr;
+            }
+            .buttons{
+                grid-gap: 20em;
+            }
+            .buttons-2{
+                grid-gap: 35em;
+            }
+            .buttons-3{
+                grid-gap: 35em;
+            }
+            .buttons-2 button{
+                width: 17%;
+            }
+            .input-8 input{
+                width: 15%;
+            }
+        }
+        @media (min-width: 1024px){
+            .page-1 h2{
+                font-size: 28px;
+            }
+            .question-1, .question-2, .question-3, .question-4, .question-5{
+                font-size: 16px;
+            }
+            .container img{
+                width: 20%;
+            }
+            .content-1{
+                padding-bottom: 10em;
+            }
+            .buttons{
+                grid-gap: 40em;
+            }
+            .buttons-2{
+                grid-gap: 55em;
+            }
+            .buttons-3{
+                grid-gap: 55em;
+            }
+            .buttons-2 button{
+                width: 13.5%;
+            }
+        }
+        @media (min-width: 1200px){
+            .container img{
+                width:20%;
+            }
+            .question-1, .question-2, .question-3, .question-4, .question-5{
+                font-size: 16px;
+            }
+            .buttons{
+                grid-gap: 32em;
+            }
+            .buttons-2{
+                grid-gap: 44em;
+            }
+            .buttons-3{
+                grid-gap: 44em;
+            }
+            .buttons-2 button{
+                width: 17%;
+            }
+            .input-8 input{
+                width: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img style="position: fixed; width: 100%; height: 110vh; top: 0; bottom: 0; left: 0; right: 0;" src="img/ARUA-2023-biennial-conference_University-of-Lagos-1024x488_edited.jpg">
+    <div style="position: relative;" class="container">
+        <div class="body">
+            <div id="page-1">
+                <h2>REGISTRATION FORM</h2>
+                <div class="content-1">
+                    <div class="question-1"><span style="color: rgb(214,180,26);">1.</span> Full name</div>
+                    <div class="input-1">
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                    </div>
+                    <div class="buttons-2">
+                        <button id="button-1">NEXT <img src="img/arrow_forward_FILL0_wght400_GRAD0_opsz48.png"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="page-2">
+                <div class="content-2">
+                    <div class="question-2"><span style="color: rgb(214,180,26);">2.</span> Email</div>
+                    <div class="input-2">
+                        <input type="text" placeholder="Insert your email">
+                    </div>
+                    <div class="buttons">
+                        <button id="button-2">PREV <img src="img/arrow_back_FILL0_wght400_GRAD0_opsz48.png"></button>
+                        <button id="button-3">NEXT <img src="img/arrow_forward_FILL0_wght400_GRAD0_opsz48.png"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="page-3">
+                <div class="content-6">
+                    <div class="question-6"><span style="color: rgb(214,180,26);">3.</span> Affiliation</div>
+                    <div class="input-6">
+                        <select>
+                            <option value="work">I Work</option>
+                            <option value="academia">Academia</option>
+                            <option value="research">Research and Development</option>
+                            <option value="organisers">Professional Organisers</option>
+                            <option value="others">Others</option>
+                        </select>
+                        <input type="text" placeholder="Specify...">
+                    </div>
+                    <div class="buttons">
+                        <button id="button-4">PREV <img src="img/arrow_back_FILL0_wght400_GRAD0_opsz48.png"></button>
+                        <button id="button-5">NEXT <img src="img/arrow_forward_FILL0_wght400_GRAD0_opsz48.png"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="page-4">
+                <div class="content-3">
+                    <div class="question-3"><span style="color: rgb(214,180,26);">4.</span> Phone number</div>
+                    <div class="input-3">
+                        <input type="number" placeholder="Insert your phone number">
+                    </div>
+                    <div class="buttons">
+                        <button id="button-6">PREV <img src="img/arrow_back_FILL0_wght400_GRAD0_opsz48.png"></button>
+                        <button id="button-7">NEXT <img src="img/arrow_forward_FILL0_wght400_GRAD0_opsz48.png"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="page-5">
+                <div class="content-4">
+                    <div class="question-4"><span style="color: rgb(214,180,26);">5.</span> Address</div>
+                    <div class="input-4">
+                        <input type="text" placeholder="Address">
+                        <input type="text" placeholder="Address Line 2">
+                        <div>
+                            <input type="text" placeholder="City">
+                            <input type="text" placeholder="Postal Code">
+                            <select>
+                                <option value="Nigeria">Nigeria</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button id="button-8">PREV <img src="img/arrow_back_FILL0_wght400_GRAD0_opsz48.png"></button>
+                        <button id="button-9">NEXT <img src="img/arrow_forward_FILL0_wght400_GRAD0_opsz48.png"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="page-6">
+                <div class="content-7">
+                    <div class="question-7"><span style="color: rgb(214,180,26);">6.</span> Meal Options</div>
+                    <div class="input-7">
+                        <select>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="non-vegetarian">Non-Vegetarian</option>
+                        </select>
+                    </div>
+                    <div class="buttons">
+                        <button id="button-10">PREV <img src="img/arrow_back_FILL0_wght400_GRAD0_opsz48.png"></button>
+                        <button id="button-11">NEXT <img src="img/arrow_forward_FILL0_wght400_GRAD0_opsz48.png"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="page-7">
+                <div class="content-8">
+                    <div class="question-8"><span style="color: rgb(214,180,26);">7.</span> Site Visits</div>
+                    <div class="input-8">
+                        <div><input checked="checked" name="answer" type="radio" value="true"/> Yes</div>
+                        <div><input name="answer" type="radio" value="false" /> No</div>
+                    </div>
+                    <div class="buttons">
+                        <button id="button-12">PREV <img src="img/arrow_back_FILL0_wght400_GRAD0_opsz48.png"></button>
+                        <button id="button-13">NEXT <img src="img/arrow_forward_FILL0_wght400_GRAD0_opsz48.png"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="page-8">
+                <div class="content-5">
+                    <div class="question-5"><span style="color: rgb(214,180,26);">8.</span> What would you like to add?</div>
+                    <div class="input-5">
+                        <textarea id="message" cols="30" rows="10" placeholder="Hi! What would you like to add..."></textarea>
+                    </div>
+                    <div class="buttons-3">
+                        <button id="button-14">PREV <img src="img/arrow_back_FILL0_wght400_GRAD0_opsz48.png"></button>
+                    </div>
+                </div>
+                <button style="justify-content: center;" class="register">REGISTER</button>
+            </div>
+        </div>
+        <div class="slider" style="position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: blue; width: 100%; height: 110vh; transform: translateY(100%);">SLIDER</div>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js" integrity="sha512-AWDq5V1aZW5392Wm63Y2qUKK5MuksXgQVx4YMx5LqLOk4Tnzu2aSNyd/Uqwil/kIm9pikPDk6B626B7H3vq1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    // gsap.registerPlugin(Flip);
+
+    var button1 = document.getElementById('button-1');
+    var button2 = document.getElementById('button-2');
+    var button3 = document.getElementById('button-3');
+    var button4 = document.getElementById('button-4');
+    var button5 = document.getElementById('button-5');
+    var button6 = document.getElementById('button-6');
+    var button7 = document.getElementById('button-7');
+    var button8 = document.getElementById('button-8');
+    var button9 = document.getElementById('button-9');
+    var button10 = document.getElementById('button-10');
+    var button11 = document.getElementById('button-11');
+    var button12 = document.getElementById('button-12');
+    var button13 = document.getElementById('button-13');
+    var button14 = document.getElementById('button-14');
+    var page1 = document.getElementById('page-1');
+    var page2 = document.getElementById('page-2');
+    var page3 = document.getElementById('page-3');
+    var page4 = document.getElementById('page-4');
+    var page5 = document.getElementById('page-5');
+    var page6 = document.getElementById('page-6');
+    var page7 = document.getElementById('page-7');
+    var page8 = document.getElementById('page-8');
+
+    // const swup = new Swup()
+
+    function button1ClickHandler(){
+        // gsap.to(page2, { background: "#385ae0"});
+        // const state = Flip.getState(page2);
+        // Flip.from(state, {
+        //     y: 100,
+        //     duration: .5,
+        //     absolute: true,
+        //     ease: "power2.out",
+        // });
+        // const tl = gsap.timeline({defaults: {ease: 'power2.out'}});
+        gsap.fromTo('#page-2', {opacity: 0, y:20}, {opacity:1, y:0, duration:1});
+        page2.style.display='grid';
+        page1.style.display='none';
+        page3.style.display='none';
+        page4.style.display='none';
+        page5.style.display='none';
+        page6.style.display='none';
+        page7.style.display='none';
+        page8.style.display='none';
+    }
+    function button2ClickHandler(){
+        gsap.fromTo('#page-1', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page1.style.display='grid';
+        page2.style.display='none';
+        page3.style.display='none';
+        page4.style.display='none';
+        page5.style.display='none';
+        page6.style.display='none';
+        page7.style.display='none';
+        page8.style.display='none';
+    }
+    function button3ClickHandler(){
+        gsap.fromTo('#page-3', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page3.style.display='grid';
+        page1.style.display='none';
+        page2.style.display='none';
+        page4.style.display='none';
+        page5.style.display='none';
+        page6.style.display='none';
+        page7.style.display='none';
+        page8.style.display='none';
+    }
+    function button4ClickHandler(){
+        gsap.fromTo('#page-2', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page2.style.display='grid';
+        page1.style.display='none';
+        page3.style.display='none';
+        page4.style.display='none';
+        page5.style.display='none';
+        page6.style.display='none';
+        page7.style.display='none';
+        page8.style.display='none';
+    }
+    function button5ClickHandler(){
+        gsap.fromTo('#page-4', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page4.style.display='grid';
+        page1.style.display='none';
+        page2.style.display='none';
+        page3.style.display='none';
+        page5.style.display='none';
+        page6.style.display='none';
+        page7.style.display='none';
+        page8.style.display='none';
+    }
+    function button6ClickHandler(){
+        gsap.fromTo('#page-3', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page3.style.display='grid';
+        page1.style.display='none';
+        page2.style.display='none';
+        page4.style.display='none';
+        page5.style.display='none';
+        page6.style.display='none';
+        page7.style.display='none';
+        page8.style.display='none';
+    }
+    function button7ClickHandler(){
+        gsap.fromTo('#page-5', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page5.style.display='flex';
+        page1.style.display='none';
+        page2.style.display='none';
+        page3.style.display='none';
+        page4.style.display='none';
+        page6.style.display='none';
+        page7.style.display='none';
+        page8.style.display='none';
+    }
+    function button8ClickHandler(){
+        gsap.fromTo('#page-4', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page4.style.display='grid';
+        page1.style.display='none';
+        page2.style.display='none';
+        page3.style.display='none';
+        page5.style.display='none';
+        page6.style.display='none';
+        page7.style.display='none';
+        page8.style.display='none';
+    }
+    function button9ClickHandler(){
+        gsap.fromTo('#page-6', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page6.style.display='grid';
+        page1.style.display='none';
+        page2.style.display='none';
+        page3.style.display='none';
+        page4.style.display='none';
+        page5.style.display='none';
+        page7.style.display='none';
+        page8.style.display='none';
+    }
+    function button10ClickHandler(){
+        gsap.fromTo('#page-5', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page5.style.display='flex';
+        page1.style.display='none';
+        page2.style.display='none';
+        page3.style.display='none';
+        page4.style.display='none';
+        page6.style.display='none';
+        page7.style.display='none';
+        page8.style.display='none';
+    }
+    function button11ClickHandler(){
+        gsap.fromTo('#page-7', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page7.style.display='grid';
+        page1.style.display='none';
+        page2.style.display='none';
+        page3.style.display='none';
+        page4.style.display='none';
+        page5.style.display='none';
+        page6.style.display='none';
+        page8.style.display='none';
+    }
+    function button12ClickHandler(){
+        gsap.fromTo('#page-6', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page6.style.display='grid';
+        page1.style.display='none';
+        page2.style.display='none';
+        page3.style.display='none';
+        page4.style.display='none';
+        page5.style.display='none';
+        page7.style.display='none';
+        page8.style.display='none';
+    }
+    function button13ClickHandler(){
+        gsap.fromTo('#page-8', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page8.style.display='flex';
+        page1.style.display='none';
+        page2.style.display='none';
+        page3.style.display='none';
+        page4.style.display='none';
+        page5.style.display='none';
+        page6.style.display='none';
+        page7.style.display='none';
+    }
+    function button14ClickHandler(){
+        gsap.fromTo('#page-7', {opacity: 0, y:20}, {opacity:1, y:0, duration:1})
+        page7.style.display='grid';
+        page1.style.display='none';
+        page2.style.display='none';
+        page3.style.display='none';
+        page4.style.display='none';
+        page5.style.display='none';
+        page6.style.display='none';
+        page8.style.display='none';
+    }
+
+
+    button1.addEventListener('click', button1ClickHandler);
+    button2.addEventListener('click', button2ClickHandler);
+    button3.addEventListener('click', button3ClickHandler);
+    button4.addEventListener('click', button4ClickHandler);
+    button5.addEventListener('click', button5ClickHandler);
+    button6.addEventListener('click', button6ClickHandler);
+    button7.addEventListener('click', button7ClickHandler);
+    button8.addEventListener('click', button8ClickHandler);
+    button9.addEventListener('click', button9ClickHandler);
+    button10.addEventListener('click', button10ClickHandler);
+    button11.addEventListener('click', button11ClickHandler);
+    button12.addEventListener('click', button12ClickHandler);
+    button13.addEventListener('click', button13ClickHandler);
+    button14.addEventListener('click', button14ClickHandler);
+</script>
+</html>

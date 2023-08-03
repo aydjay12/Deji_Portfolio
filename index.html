@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayo D Portfolio</title>
+    <link rel="icon" href="img/portfolio_logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Kumbh Sans', sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background: rgba(15, 22, 36, 100%);
+            color: white;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            align-items: center;
+        }
+        .main-container{
+            width: 80%;
+            margin: auto;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+        }
+        .logo-1{
+            width: 12%;
+        }
+        .logo img{
+            width: 30%;
+            margin-right: .6em;
+        }
+        .pages{
+            display: flex;
+            width: 50%;
+            justify-content: space-around;
+        }
+        .pages button{
+            font-size: 1em;
+            color: white;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        .contact-logo{
+            width: 10%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .contact-logo a{
+            width: 100%;
+        }
+        .contact-logo img{
+            width: 50%;
+            cursor: pointer;
+        }
+        .home-page{
+            padding-top: 4em;
+            padding-bottom: 4em;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .horizontal-1{
+            width: 70%;
+        }
+        .horizontal-1 h2{
+            font-size: 3em;
+            margin-bottom: .2em;
+        }
+        .name{
+            background:
+                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+        }
+        .name-mobile{
+            display: none;
+            background:
+                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+        }
+        .horizontal-1 img{
+            width: 5%;
+        }
+        .horizontal-2{
+            width: 30%;
+        }
+        .horizontal-2 img{
+            width: 100%;
+            border-radius: 3%;
+            background: radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 3px, transparent 3px) 0% 0%/8px 8px no-repeat,
+                radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 3px, transparent 3px) 100% 0%/8px 8px no-repeat,
+                radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 3px, transparent 3px) 0% 100%/8px 8px no-repeat,
+                radial-gradient(circle at 0 0, #ffffff 0, #ffffff 3px, transparent 3px) 100% 100%/8px 8px no-repeat,
+                linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 10px) calc(100% - 16px) no-repeat,
+                linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 16px) calc(100% - 10px) no-repeat,
+                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);
+            padding: 7px;
+        }
+        .about-page{
+            padding-top: 4em;
+            display: flex;
+            flex-direction: column;
+        }
+        .about-me h1{
+            margin-bottom: 1em;
+            background:
+                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+        }
+        .about-me p{
+            margin-bottom: 2em;
+            line-height: 1.4em;
+        }
+        .experience h1{
+            margin-bottom: 1em;
+            background:
+                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+        }
+        .junior{
+            display: flex;
+            flex-direction: column;
+        }
+        .row-1{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: .6em;
+        }
+        .row-1 h2{
+            font-weight: 400;
+            font-size: 1.2em;
+        }
+        .row-1 p{
+            font-size: .7em;
+            font-weight: 600;
+            background: white;
+            color: rgba(15, 22, 36, 100%);
+            display: flex;
+            align-items: center;
+            padding-left: 1em;
+            padding-right: 1em;
+            border-radius: 2em;
+        }
+        .row-2 h6{
+            font-weight: 500;
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: .1em;
+            margin-bottom: 2em;
+        }
+        .row-2 ul{
+            background: white;
+            width: 100%;
+            padding: .005em;
+            border-radius: 2em;
+            margin-bottom: 2em;
+        }
+        .education h1{
+            margin-bottom: 1em;
+            background:
+                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+        }
+        .technologies{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 6em;
+        }
+        .technologies h1{
+            margin-bottom: .5em;
+        }
+        .technologies p{
+            color: silver;
+            margin-bottom: 4em;
+        }
+        .tech-logos{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            width: 100%;
+            grid-gap: 4em;
+            place-content: center;
+            grid-column-gap: 10em;
+        }
+        .tech-logos img{
+            width: 100%;
+        }
+        .projects{
+            padding-top: 8em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .projects h1{
+            margin-bottom: .5em;
+        }
+        .projects p{
+            color: silver;
+            margin-bottom: 4em;
+        }
+        .project-tiles{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 100%;
+            grid-gap: 4em;
+            place-content: center;
+        }
+        .project-tiles div{
+            width: 100%;
+            background: rgba(15, 22, 36, 1);
+            padding: 1em;
+            border: 1px solid white;
+            border-top-left-radius: 1.5em;
+            border-bottom-right-radius: 1.5em;
+            box-shadow: 15px 22px 44px 7px rgba(192,192,192,0.05);
+                -webkit-box-shadow: 15px 22px 44px 7px rgba(192,192,192,0.05);
+                -moz-box-shadow: 15px 22px 44px 7px rgba(192,192,192,0.05);
+        }
+        .project-tiles div img{
+            width: 100%;
+            border-radius: .2em;
+            margin-bottom: .4em;
+        }
+        .project-tiles div h2{
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: .4em;
+        }
+        .project-tiles div ul{
+            background:
+                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);
+            width: 60%;
+            padding: .05em;
+            border-radius: 2em;
+            display: flex;
+            margin: auto;
+            margin-bottom: 1em;
+        }
+        .project-tiles div p{
+            font-size: .8em;
+            line-height: 1.3em;
+            color: white;
+            margin-bottom: 2em;
+        }
+        .project-tiles div button{
+            background:
+                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);
+            padding: .7em;
+            padding-left: 1.5em;
+            padding-right: 1.5em;
+            border: none;
+            color: white;
+            font-weight: 600;
+            border-radius: 2em;
+            margin-bottom: 1em;
+            cursor: pointer;
+            moz-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        .project-tiles div button:hover {
+            background-position: 100% 0;
+            moz-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+            background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+            box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+        }
+        .project-tiles div button:focus {
+            outline: none;
+        }
+        .contact{
+            padding-top: 12em;
+            padding-bottom: 18em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact h1{
+            margin-bottom: .5em;
+            font-weight: 600;
+            font-size: 3em;
+        }
+        .mail{
+            background:
+                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+        }
+        .footer{
+            display: flex;
+            flex-direction: column;
+            padding-top: 2em;
+            padding-bottom: 3em;
+        }
+        .col-1{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2em;
+        }
+        .col-1 cite{
+            margin-right: 25em;
+        }
+        .col-1 p{
+            margin-right: 1em;
+        }
+        .footer ul{
+            background: white;
+            width: 100%;
+            padding: .005em;
+            border-radius: 2em;
+            margin-bottom: 2.5em;
+        }
+        .pages-1{
+            justify-content: space-between;
+        }
+        .arrow{
+            display: none;
+            position: fixed;
+            width: 3%;
+            bottom: 2em;
+            right: 1em;
+            cursor: pointer;
+            z-index: 99;
+            background:
+            linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+            linear-gradient(65deg, #e56a25 0%, #f0c318 100%);
+            border-radius: 50%;
+        }
+
+        @media screen and (max-width: 1024px){
+            .main-container{
+                width: 85%;
+            }
+            .pages button{
+                font-size: .8em;
+            }
+            .horizontal-1 h2{
+                font-size: 2.5em;
+            }
+            .tech-logos{
+                grid-column-gap: 7em;
+            }
+            .project-tiles{
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 6em;
+            }
+            .footer{
+                font-size: .8em;
+            }
+        }
+
+        @media screen and (max-width: 768px){
+            .main-container{
+                width: 90%;
+            }
+            .logo p{
+                font-size: .6em;
+            }
+            .pages button{
+                font-size: .6em;
+            }
+            .horizontal-1 h2{
+                font-size: 1.8em;
+            }
+            .about-me h1{
+                font-size: 1.5em;
+            }
+            .about-me p{
+                font-size: .8em;
+                line-height: 1.6em;
+            }
+            .experience h1{
+                font-size: 1.5em;
+            }
+            .row-1 h2{
+                font-size: .9em;
+            }
+            .row-1 p{
+                font-size: .5em;
+            }
+            .row-2 h6{
+                font-size: .5em;
+            }
+            .education h1{
+                font-size: 1.5em;
+            }
+            .technologies h1{
+                font-size: 1.6em;
+            }
+            .technologies p{
+                font-size: .9em;
+            }
+            .tech-logos{
+                grid-gap: 3em;
+                grid-column-gap: 4em;
+            }
+            .projects h1{
+                font-size: 1.6em;
+            }
+            .projects p{
+                font-size: .9em;
+            }
+            .project-tiles{
+                grid-gap: 2em;
+            }
+            .contact{
+                padding-top: 10em;
+                padding-bottom: 14em;
+            }
+            .contact h1{
+                font-size: 2.1em;
+            }
+            .footer{
+                font-size: .6em;
+            }
+            .logo-1{
+                width: 16%;
+            }
+            .col-1{
+                width: 100%;
+            }
+            .pages-1{
+                font-size: 1.6em;
+            }
+            .col-1 cite{
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 500px){
+            .pages{
+                display: none;
+            }
+            .logo img{
+                width: 35%;
+            }
+            .logo p{
+                font-size: .8em;
+            }
+            .contact-logo{
+                width: 25%;
+            }
+            .home-page{
+                flex-direction: column;
+                padding-top: 2em;
+                padding-bottom: 2em;
+            }
+            .horizontal-1{
+                width: 100%;
+                margin-bottom: 2em;
+            }
+            .about-page{
+                padding-top: 2em;
+            }
+            .horizontal-1 img{
+                width: 10%;
+            }
+            /* .name{
+                display: none;
+            }
+            .name-is{
+                display: none;
+            }
+            .name-mobile{
+                display: block;
+            } */
+            .horizontal-1 h2{
+                font-size: 2em;
+                text-align: start;
+            }
+            .horizontal-2{
+                width: 100%;
+            }
+            .horizontal-2 img{
+                width: 50vh;
+            }
+            .about-me p{
+                margin-bottom: 3em;
+            }
+            .row-1 p{
+                text-align: center;
+            }
+            .row-2 ul{
+                margin-bottom: 3em;
+            }
+            .technologies{
+                padding-top: 1em;
+            }
+            .technologies h1{
+                font-size: 1.2em;
+            }
+            .technologies p{
+                font-size: .7em;
+            }
+            .tech-logos{
+                grid-gap: 2em;
+                grid-column-gap: 2em;
+            }
+            .projects{
+                padding-top: 4em;
+            }
+            .projects h1{
+                font-size: 1.2em;
+            }
+            .projects p{
+                font-size: .7em;
+            }
+            .project-tiles{
+                grid-template-columns: 1fr;
+            }
+            .contact{
+                padding-top: 8em;
+                padding-bottom: 10em;
+            }
+            .contact h1{
+                font-size: 1.2em;
+            }
+            .contact-logo-1{
+                display: none;
+            }
+            .pages-1{
+                width: 100%;
+                display: flex;
+            }
+            .arrow{
+                display: none;
+                position: fixed;
+                width: 10%;
+                bottom: 2em;
+                right: 1em;
+                cursor: pointer;
+                z-index: 99;
+                background:
+                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);
+                border-radius: 50%;
+            }
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="main-container">
+            <img class="arrow" id="arrow" src="img/white up arrow icon.png" alt="">
+            <div class="header" id="header">
+                <div class="logo">
+                    <img src="img/portfolio_logo.png" alt=""><p>Portfolio</p>
+                </div>
+                <div class="pages">
+                    <a href="#home"><button>Home</button></a>
+                    <a href="#about"><button>About me</button></a>
+                    <a href="#technologies"><button>Technologies</button></a>
+                    <a href="#projects"><button>Projects</button></a>
+                    <a href="#contact"><button>Contact</button></a>
+                </div>
+                <div class="contact-logo">
+                    <a href="https://github.com/aydjay12/" target="_blank"><img src="img/mark-github-24.png" alt=""></a>
+                    <a href="https://www.linkedin.com/in/ayo-deji-898308286/" target="_blank"><img src="img/Linkedin.png" alt=""></a>
+                    <a href="https://twitter.com/aydjay12" target="_blank"><img src="img/twitter.png" alt=""></a>
+                </div>
+            </div>
+            <div class="home-page" id="home">
+                <div class="horizontal-1">
+                    <h2>Hello <img src="img/hi-logo.png" alt="">,</h2>
+                    <h2 class="name-is">My name is</h2>
+                    <h2 class="name">Ayo D</h2>
+                    <h2 class="name-mobile">My name is Ayo D</h2>
+                    <h2>I build things for the web</h2>
+                </div>
+                <div class="horizontal-2">
+                    <img src="img/Deji 2-PhotoRoom.png" alt="">
+                </div>
+            </div>
+            <div class="about-page" id="about">
+                <div class="about-me">
+                    <h1>About me</h1>
+                    <p>Highly skilled and passionate Front End Developer with over 2 years of experience in creating and implementing innovative user interfaces and interactive web applications. Proficient in translating design mock-ups and wireframes into responsive and pixel-perfect web experiences. Adept at collaborating with cross-functional teams to deliver top-notch products that exceed client expectations. Committed to staying updated with the latest web development trends and best practices to continuously improve development efficiency and user experience. Excels in HTML, CSS, JavaScript, and various modern front-end frameworks, including React and Angular.</p>
+                </div>
+                <div class="experience">
+                    <h1>Work Experience</h1>
+                    <div class="junior">
+                        <div class="row-1">
+                            <h2>Junior Web Developer</h2>
+                            <p>Remote</p>
+                        </div>
+                        <div class="row-2">
+                            <h6>Freelance</h6>
+                            <ul></ul>
+                        </div>
+                    </div>
+                    <div class="web">
+                        <div class="row-1">
+                            <h2>Web Development Intern</h2>
+                            <p>Internship</p>
+                        </div>
+                        <div class="row-2">
+                            <h6>Centre For Information Technology and Systems(C.I.T.S), UNILAG</h6>
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="education">
+                    <h1>Education</h1>
+                    <div class="bachelor">
+                        <div class="row-1">
+                            <h2>Bachelor in Science and Technology Education</h2>
+                            <p>Full Time</p>
+                        </div>
+                        <div class="row-2">
+                            <h6>University of Lagos</h6>
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="technologies" id="technologies">
+                <h1>My Tech Stack</h1>
+                <p>Technologies I've been working with recently</p>
+                <div class="tech-logos">
+                    <img src="img/vscode-icons_file-type-html.png" alt="">
+                    <img src="img/vscode-icons_file-type-css.png" alt="">
+                    <img src="img/vscode-icons_file-type-js-official.png" alt="">
+                    <img src="img/logos_react.png" alt="">
+                    <img src="img/logos_bootstrap.png" alt="">
+                    <img src="img/logos_sass.png" alt="">
+                    <img src="img/logos_git-icon.png" alt="">
+                    <img src="img/cib_greensock.png" alt="">
+                    <img src="img/vscode-icons_file-type-vscode.png" alt="">
+                    <img src="img/akar-icons_github-fill.png" alt="">
+                </div>
+            </div>
+            <div class="projects" id="projects">
+                <h1>Projects</h1>
+                <p>Things I've built so far</p>
+                <div class="project-tiles">
+                    <div class="tile-1">
+                        <img src="img/Mandela_Website.png" alt="">
+                        <h2>Unilag Mandela Week</h2>
+                        <ul></ul>
+                        <p>In this web development project, I collaborated with a cross-functional team to create a modern and user-friendly platform for a high-profile event in the University of Lagos . The event aimed to celebrate an African Icon. This is my sample of the project.</p>
+                        <a href="Nelson Mandela Week/index.html" target="_blank"><button>Look it up</button></a>
+                    </div>
+                    <div class="tile-2">
+                        <img src="img/Fruit_Website.png" alt="">
+                        <h2>Lookscout Fruit Website</h2>
+                        <ul></ul>
+                        <p>Through this personal web development endeavor, I not only honed my technical skills but also created a compelling digital presence that reflects my expertise, creativity, and dedication as a Front End Developer.</p>
+                        <a href="Fruit Website/index.html" target="_blank"><button>Look it up</button></a>
+                    </div>
+                    <div class="tile-3">
+                        <img src="img/Data_Science_School.png" alt="">
+                        <h2>Data Science School</h2>
+                        <ul></ul>
+                        <p>Collaborated with a client to bring their vision to life through a tailored website, utilizing HTML, CSS, and JavaScript to create a seamless and user-friendly online platform and  deployed the website to a secure hosting environment afterwards.</p>
+                        <a href="Data_Science_School/index.html" target="_blank"><button>Look it up</button></a>
+                    </div>
+                    <div class="tile-4">
+                        <img src="img/E-Commerce_Website.png" alt="">
+                        <h2>E-Commerce Product Page</h2>
+                        <ul></ul>
+                        <p>Leveraged the power of Vanilla JavaScript to craft a dynamic e-commerce product page personal project, combining HTML, CSS, and JavaScript to design a captivating and responsive user interface that showcases product details, enhances user engagement, and demonstrates front-end expertise.</p>
+                        <a href="ecommerce-product-page-main/index.html" target="_blank"><button>Look it up</button></a>
+                    </div>
+                    <div class="tile-5">
+                        <img src="img/ARUA 2023.png" alt="">
+                        <h2>ARUA 2023</h2>
+                        <ul></ul>
+                        <p>Successfully executed a client's vision by developing a user-friendly and visually captivating simple website, leveraging HTML, CSS, and JavaScript to create an intuitive and interactive online presence that meets the client's requirements and promotes their brand effectively.</p>
+                        <a href="AURA_FILE/index.html" target="_blank"><button>Look it up</button></a>
+                    </div>
+                    <div class="tile-6">
+                        <img src="img/Interactive_Card.png" alt="">
+                        <h2>Interactive Card</h2>
+                        <ul></ul>
+                        <p>Designed and implemented a robust form validation personal project using JavaScript and HTML, enhancing user experience by ensuring accurate and error-free input submission for a seamless interaction.</p>
+                        <a href="interactive-card-details-form-main/index.html" target="_blank"><button>Look it up</button></a>
+                    </div>
+                    <div class="tile-7">
+                        <img src="img/room_website.png" alt="">
+                        <h2>Room Homepage</h2>
+                        <ul></ul>
+                        <p>Implemented a pixel-perfect UI, meticulously crafting each component to reflect a modern and minimalist aesthetic that emphasizes content clarity and visual appeal.</p>
+                        <a href="room-homepage-master/index.html" target="_blank"><button>Look it up</button></a>
+                    </div>
+                    <div class="tile-8">
+                        <img src="img/Snap_Website.png" alt="">
+                        <h2>Snap Homepage</h2>
+                        <ul></ul>
+                        <p>Created an engaging and minimalist website homepage personal project, utilizing HTML, CSS, and JavaScript to deliver a visually appealing and responsive user interface that effectively communicates key information and showcases my front-end development skills.</p>
+                        <a href="intro-section-with-dropdown-navigation-main/index.html" target="_blank"><button>Look it up</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact" id="contact">
+                <h1>For any questions please mail us:</h1>
+                <h1 class="mail">aydjay12@gmail.com</h1>
+            </div>
+            <div class="footer">
+                <div class="col-1">
+                    <div class="logo logo-1">
+                        <img src="img/portfolio_logo.png" alt=""><cite>Portfolio</cite>
+                    </div>
+                    <p>+234 9035185262</p>
+                    <p>aydjay12@gmail.com</p>
+                    <div class="contact-logo contact-logo-1">
+                        <a href="https://github.com/aydjay12/" target="_blank"><img src="img/mark-github-24.png" alt=""></a>
+                        <a href="https://www.linkedin.com/in/ayo-deji-898308286/" target="_blank"><img src="img/Linkedin.png" alt=""></a>
+                        <a href="https://twitter.com/aydjay12" target="_blank"><img src="img/twitter.png" alt=""></a>
+                    </div>
+                </div>
+                <ul></ul>
+                <div class="pages pages-1">
+                    <a href="#home"><button>Home</button></a>
+                    <a href="#about"><button>About me</button></a>
+                    <a href="#technologies"><button>Technologies</button></a>
+                    <a href="#projects"><button>Projects</button></a>
+                    <a href="#contact"><button>Contact</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var arrow = document.getElementById('arrow');
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            arrow.style.display = "block";
+        } else {
+            arrow.style.display = "none";
+        }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function arrowClick() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        arrow.addEventListener('click', arrowClick);
+    </script>
+    
+</body>
+</html>

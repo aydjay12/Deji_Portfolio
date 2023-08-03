@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Room homepage</title>
+  <style>
+    *{
+        font-family: 'Kumbh Sans', sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container{
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .horizontal-1{
+        display: flex;
+        height: 65vh;
+        width: 100%;
+      }
+      .horizontal-2{
+        display: flex;
+        height: 35vh;
+        width: 100%;
+      }
+      .box-1{
+        /* background-image: url(/room-homepage-master/images/desktop-image-hero-1.jpg);
+        background-size: cover;
+        background-blend-mode: overlay; */
+        width: 57%;
+        position: relative;
+      }
+      .hero{
+        width: 100%;
+        height: 65vh;
+      }
+      .header{
+        position: absolute;
+        left: 2rem;
+        top: 1.5rem;
+        display: flex;
+        width: 50%;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .header img{
+        width: 30%;
+        padding: 2rem;
+      }
+      .header button{
+        font-size: 16px;
+        font-weight: 700;
+        color: white;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
+      .header button::after{
+        display: none;
+        content: "";
+        width: 70px;
+        border-radius: 100px;
+        height: 4px;
+        background: white;
+        margin-bottom: 1rem;
+      }
+      .header button:hover::after{
+        display: block;
+      }
+      .box-2{
+        width: 43%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 5em;
+        padding-top: 5rem;
+        position: relative;
+      }
+      .box-2 h1{
+        width: 80%;
+        font-size: 35px;
+        padding-bottom: 1rem;
+      }
+      .box-2 p{
+        width: 80%;
+        font-size: 15px;
+        color: hsl(0, 0%, 63%);
+        line-height: 1.2rem;
+        padding-bottom: 1rem;
+      }
+      .box-2 button{
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        letter-spacing: .6rem;
+        width: 48%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .box-2 button:hover{
+        opacity: .3;
+      }
+      .box-2 button img{
+        width: 18%;
+      }
+      .arrows{
+        background: black;
+        width: 30%;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        margin: 0;
+        padding-left: 1.5em;
+        bottom: 0rem;
+        left: 0rem;
+      }
+      .arrows button{
+        width: 100%;
+        height: 100%;
+      }
+      .arrows button:hover{
+        opacity: .3;
+      }
+      .arrows button img{
+        width: 35%;
+      }
+      .box-3{
+        width: 75%;
+      }
+      .box-3 img{
+        width: 100%;
+        height: 35vh;
+      }
+      .box-4{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .box-4 h2{
+        font-size: 16px;
+        letter-spacing: .5rem;
+        font-weight: 600;
+        padding-left: 4rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+      }
+      .box-4 p{
+        width: 90%;
+        font-size: 14px;
+        color: hsl(0, 0%, 63%);
+        line-height: 1.2rem;
+        padding-bottom: 2rem;
+        padding-left: 4rem;
+      }
+      .box-5{
+        width: 75.5%;
+      }
+      .box-5 img{
+        width: 100%;
+        height: 35vh;
+      }
+      .arrows-1{
+        display: none;
+      }
+      #menu{
+        display: none;
+      }
+      #sidebar{
+        display: none;
+      }
+
+      @media screen and (max-width: 500px){
+        .horizontal-1{
+          flex-direction: column;
+          min-height: 135vh;
+        }
+        .box-1{
+          width: 100%;
+          height: 60vh;
+        }
+        .hero{
+          width: 100%;
+          height: 100%;
+        }
+        .header img{
+          width: 60%;
+        }
+        .header button{
+          display: none;
+        }
+        .box-2{
+          width: 100%;
+          padding: 2em;
+          padding-top: 3.5em;
+        }
+        .box-2 h1{
+          width: 100%;
+        }
+        .box-2 p{
+          width: 100%;
+          line-height: 1.5em;
+          margin-bottom: 2em;
+        }
+        .box-2 button{
+          width: 70%;
+        }
+        .horizontal-2{
+          flex-direction: column;
+        }
+        .arrows{
+          display: none;
+        }
+        .arrows-1{
+          background: black;
+          width: 30%;
+          height: 10vh;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          position: absolute;
+          margin: 0;
+          bottom: 0;
+          right: 0rem;
+        }
+        .arrows-1 button{
+          width: 100%;
+          height: 100%;
+          background: black;
+          border: none;
+          cursor: pointer;
+        }
+        .arrows-1 button:hover{
+          opacity: .3;
+        }
+        .arrows-1 button img{
+          width: 35%;
+        }
+        .header{
+          justify-content: space-between;
+          left: 0;
+          top: .5em;
+        }
+        #menu{
+          display: flex;
+          margin-right: 4em;
+          cursor: pointer;
+        }
+        .box-3{
+          width: 100%;
+        }
+        .box-3 img{
+          width: 100%;
+          height: 100%;
+        }
+        .box-5{
+          width: 100%;
+        }
+        .box-5 img{
+          width: 100%;
+          height: 100%;
+        }
+        .box-4 h2{
+          width: 100%;
+          padding: 2em;
+          padding-top: 3.5em;
+          padding-bottom: 1.2em;
+        }
+        .box-4 p{
+          width: 100%;
+          padding: 2em;
+          padding-top: 0;
+          line-height: 1.6em;
+          margin-bottom: 2.4em;
+        }
+        #sidebar{
+          position: fixed;
+          left: 0;
+          z-index: 400;
+          top: 0;
+          bottom: 0;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.6);
+        }
+        .side-bar{
+          display: flex;
+          align-items: center;
+          background: white;
+          width: 100%;
+          padding: 1.3em;
+          padding-top: 3em;
+          padding-bottom: 3em;
+        }
+        .side-bar img{
+          width: 5%;
+          cursor: pointer;
+          margin-right: 4em;
+        }
+        .side-bar div{
+          width: 100%;
+          justify-content: space-around;
+          display: flex;
+          align-items: center;
+        }
+        .side-bar button{
+          font-size: 18px;
+          font-weight: 700;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          color: black;
+        }
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="horizontal-1">
+      <div id="sidebar">
+        <div class="side-bar">
+          <img id="close-btn" src="images/icon-close.svg">
+          <div class="button-mobile">
+            <button>home</button>
+            <button>shop</button>
+            <button>about</button>
+            <button>contact</button>
+          </div>
+        </div>
+      </div>
+      <div class="box-1">
+        <img id="hero" class="hero" src="images/desktop-image-hero-1.jpg">
+        <header class="header">
+          <img id="menu" src="images/icon-hamburger.svg" alt="">
+          <img class="logo" src="images/logo.svg">
+          <button>home</button>
+          <button>shop</button>
+          <button>about</button>
+          <button>contact</button>
+        </header>
+        <div class="after"></div>
+        <div class="arrows-1">
+          <button id="left-1" style="margin-right: 3rem;"><img src="images/icon-angle-left.svg"></button>
+          <button id="right-1"><img src="images/icon-angle-right.svg"></button>
+        </div>
+      </div>
+      <div class="box-2">
+        <h1 id="theme">Discover innovative ways to decorate</h1>
+        <p>We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.</p>
+        <button>SHOP NOW <img src="images/icon-arrow.svg"></button>
+        <div class="arrows">
+          <button id="left" style="margin-right: 3rem;"><img src="images/icon-angle-left.svg"></button>
+          <button id="right"><img src="images/icon-angle-right.svg"></button>
+        </div>
+      </div>
+    </div>
+    <div class="horizontal-2">
+      <div class="box-3">
+        <img src="images/image-about-dark.jpg">
+      </div>
+      <div class="box-4">
+        <h2>ABOUT OUR FURNITURE</h2>
+        <p>Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Products specialists are available to help you create your dream space.</p>
+      </div>
+      <div class="box-5">
+        <img src="images/image-about-light.jpg">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var left = document.getElementById("left");
+    var right = document.getElementById("right");
+    var left1 = document.getElementById("left-1");
+    var right1 = document.getElementById("right-1");
+    var hero = document.getElementById("hero");
+    var theme = document.getElementById("theme");
+    var menu = document.getElementById('menu');
+    var sidebar = document.getElementById('sidebar');
+    var closeBtnMobile = document.getElementById('close-btn');
+    currentImg = 1;
+
+    function leftClick(){
+      if (currentImg == 1) {
+          currentImg = 3;
+      } else {
+          currentImg--;
+      }
+      hero.src = `images/desktop-image-hero-${currentImg}.jpg`;
+      if (currentImg == 2) {
+        theme.innerText = 'We are available all across the globe';
+      } else if (currentImg == 1) {
+        theme.innerText = 'Discover innovative ways to decorate';
+      } else if (currentImg == 3) {
+        theme.innerText = 'Manufactured with the best materials';
+      }
+    }
+    function rightClick(){
+      if (currentImg == 3) {
+          currentImg = 1;
+      } else {
+          currentImg++;
+      }
+      hero.src = `images/desktop-image-hero-${currentImg}.jpg`;
+      if (currentImg == 2) {
+        theme.innerText = 'We are available all across the globe';
+      } else if (currentImg == 1) {
+        theme.innerText = 'Discover innovative ways to decorate';
+      } else if (currentImg == 3) {
+        theme.innerText = 'Manufactured with the best materials';
+      }
+    }
+    function menuClick(){
+      sidebar.style.display = 'block';
+    }
+    function closeBtnMobileClick(){
+      sidebar.style.display = 'none';
+    }
+
+    left.addEventListener("click", leftClick);
+    right.addEventListener("click", rightClick);
+    left1.addEventListener("click", leftClick);
+    right1.addEventListener("click", rightClick);
+    menu.addEventListener('click', menuClick);
+    closeBtnMobile.addEventListener('click', closeBtnMobileClick);
+  </script>
+</body>
+</html>

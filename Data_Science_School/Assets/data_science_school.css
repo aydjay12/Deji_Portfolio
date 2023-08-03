@@ -1,0 +1,1033 @@
+/* Potriat Mobile View */
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.home
+{
+    width: 100%;
+    min-height: 100vh;
+    margin: auto;
+    padding: 1.5em;
+    background-image: url("Images/1569494009002.jpeg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.image
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.image img
+{
+    width: 40px;
+}
+
+.image img:nth-of-type(even)
+{
+    width: 85px;
+    height: 40px;
+}
+.nav_bar
+{
+    position: relative;
+}
+
+.nav_bar img
+{
+    width: 30px;
+}
+
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.nav_bar ul
+{
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    right: 0;
+    padding: 0.2em;
+    backdrop-filter: blur(20px);
+}
+
+.nav_bar ul li
+{
+    padding: 0.5em;
+}
+
+.nav_bar ul a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 0.8em;
+}
+
+
+@media (max-width: 754px)
+{
+    .nav_bar:hover ul
+    {
+        display: block;
+    }
+}
+
+.showcase
+{
+    margin-top: 4em;
+    width: 100%;
+}
+
+.showcase .sub_topic p
+{
+    color: white;
+    font-size: 0.6em;
+    width: 80%;
+    line-height: 1.7;
+    margin-bottom: 1.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.showcase .topic p
+{
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+} 
+
+.showcase .topic p:nth-of-type(1)
+{
+    font-size: 1.7em;
+    margin-bottom: 0.2em;
+    color: rgb(135,206,250);
+}
+
+.note
+{
+    margin-top: 1em;
+    color: white;
+}
+
+.note span
+{
+    color: rgb(135,206,250);
+}
+.related_topics
+{
+    padding: 0.5em;
+    margin-top: 5em;
+    backdrop-filter: blur(50px);
+    border-radius: 1em;
+}
+
+.related_topics p
+{
+    color: rgb(135,206,250);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+.related_topics ul
+{
+    padding-left: 1.6em;
+    margin-top: 0.5em;
+}
+
+.related_topics li
+{
+    color: white;
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-bottom: 0.5em;
+}
+
+.date_time
+{
+    padding: 0.5em;
+    margin-top: 4em;
+    backdrop-filter: blur(50px);
+    border-radius: 1em;
+}
+
+.date_time p
+{
+    margin: 1em 0 1em 0;
+    color: white;
+    font-size: 0.9em;
+    margin-bottom: 2em;
+}
+
+.date_time p i
+{
+    margin-right: 1.5em;
+}
+
+.Who_To_Attend_And_Requirement
+{
+    width: 100%;
+    min-height: 60vh;
+    margin: auto;
+    margin-top: 3em;
+    padding: 2em;
+    background-image: url("Images/data-science-overview.png");
+    background-position: center right;
+    background-size: 250px 250px;
+    background-repeat: no-repeat;
+    background-blend-mode: saturation;
+}
+
+.Who_to_Attend, .Requirement
+{
+    margin-bottom: 4em;
+}
+
+.Who_to_Attend>p, .Requirement>p
+{
+    font-weight: bold;
+    font-size: 2em;
+    color: rgb(135,206,250);
+    /* margin-bottom: 1.5em; */
+}
+
+.Who_to_Attend section, .Requirement section
+{
+    margin-top: 1em;
+    font-weight: 500;
+}
+
+.Who_to_Attend section p, .Requirement section p
+{
+    margin-bottom: 1.7em;
+    font-size: 1em;
+}
+
+.Who_to_Attend section i, .Requirement section i
+{
+    margin-right: 0.5em;
+}
+
+.Register
+{
+    width: 100%;
+    margin-top: 2em;
+    min-height: 70vh;
+    padding: 1.5em;
+}
+
+.Register>p
+{
+    font-weight: bold;
+    font-size: 2em;
+    color: rgb(135,206,250);
+    margin-bottom: 1.5em;
+}
+
+.Register .head th
+{
+    color: rgb(135,206,250);
+    padding: 1em;
+    font-size: 1em;
+    width: 700px;
+}
+
+.Register .head th:nth-of-type(1)
+{
+    text-align: left;
+    padding-left: 0em;
+}
+
+.Register .body td
+{
+    text-align: start;
+    padding: 0.5em;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.Register .body td:nth-of-type(2)
+{
+    text-align: center;
+}
+
+.payment, .students, .others
+{
+    margin-top: 2em;
+}
+
+.payment>p, .students p:nth-of-type(1), .others p:nth-of-type(1)
+{
+    font-weight: bold;
+    font-size: 1em;
+    color: rgb(135,206,250);
+    margin-bottom: 1.5em;
+}
+
+.payment section p
+{
+    margin-bottom: 1em;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.payment section p span
+{
+    margin-right: 0.5em;
+    font-weight: 500;
+}
+
+.link
+{
+    margin-top: 2em;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.link a
+{
+    color: rgb(135,206,250);
+    text-decoration: none;
+}
+
+.students p:nth-of-type(2), .others p:nth-of-type(2)
+{
+    line-height: 1.6;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.Sponsors
+{
+    background-image: url("Images/depositphotos_272013200-stock-photo-big-data-visualization-science-background.jpg");
+}
+
+.Sponsors .partners
+{
+    margin-top: 3em;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.partners .img
+{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.partners .img:nth-of-type(3), .partners .img:nth-of-type(1)
+{
+    width: 150px;
+    height: 150px;
+}
+
+.img img
+{
+  width: 100%;
+}
+
+.further_enquiry
+{
+    padding: 1.5em;
+    color: white;
+}
+
+.further_enquiry>p
+{
+    margin-bottom: 1em;
+}
+
+.further_enquiry .Phone
+{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Begining of Speakers Style */
+
+.Speakers{
+    background: hsl(220, 16%, 96%);
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 7em;
+    padding-right: 6em;
+}
+.top{
+    margin-bottom: 5rem;
+}
+.top h1{
+    width: 25%;
+    color: black;
+    font-size: 60px;
+}
+.top h3{
+    color: rgb(135,206,250);
+    font-size: 24px;
+    margin-bottom: 1.4rem;
+}
+.top h2{
+    font-size: 65px;
+    color: black;
+    margin-right: 4rem;
+}
+.top div{
+    display: flex;
+    justify-content: space-between;
+}
+#arrow{
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    top: 67em;
+    left: 144em;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background: rgb(135,206,250);
+    display: none;
+}
+#arrow img{
+    width: 60%;
+}
+.others{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+}
+.top-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 3rem;
+}
+.top-2 h2{
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 2rem;
+}
+.bottom-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+.bottom-2 div{
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 85%;
+    padding: 1rem;
+}
+.bottom-2 div img{
+    width: 20%;
+}
+.bottom-2 div h3{
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+.bottom-2 div p{
+    color: hsl(233, 8%, 62%);
+    font-size: 16px;
+    width: 78%;
+}
+.online{
+    background: white;
+    border-radius: 4px;
+}
+.bottom-3{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    place-items: center;
+    gap: -30rem;
+}
+.bottom-3 img{
+    width: 100%;
+    height: 35vh;
+    filter: opacity(70%);
+    filter: brightness(70%);
+}
+.bottom-3 div{
+    background: white;
+    width: 85%;
+    border-radius: 4px;
+    margin-bottom: 4rem
+}
+.bottom-3 div div{
+    padding: 2rem;
+    margin-top: -.3rem;
+    height: 22vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bottom-3 h6{
+    font-size: 24px;
+    padding-bottom: 1rem;
+    font-weight: 500;
+}
+.bottom-3 h4{
+    width: 100%;
+    font-size: 22px;
+    font-weight: 500;
+    padding-bottom: 1rem;
+}
+.bottom-3 p{
+    font-size: 20px;
+    width: 120%;
+    padding-bottom: 1rem;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: none; */
+}
+#button{
+    background: transparent;
+    color: rgb(135,206,250);
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+.row-2{
+    display: none;
+}
+
+@media (min-width: 360px){
+    .Speakers{
+        padding: 2rem;
+        padding-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .top h3{
+        font-size: 20px;
+        text-align: center;
+    }
+    .top div{
+        flex-direction: column;
+        align-items: center;
+    }
+    .top div h1{
+        font-size: 50px;
+        width: 100%;
+        text-align: center;
+    }
+    .top div h2{
+        display: none;
+    }
+    .bottom-3{
+        grid-template-columns: 1fr;
+    }
+    .bottom-3 div{
+        width: 100%;
+        height: 90%;
+    }
+    .bottom-3 div div{
+        height: 22vh;
+    }
+    .bottom-3 h6{
+        font-size: 20px;
+    }
+    .bottom-3 h4{
+        font-size: 18px;
+    }
+    .bottom-3 p{
+        font-size: 16px;
+    }
+    .bottom-3 img{
+        height: 50vh;
+    }
+    #arrow{
+        position: unset;
+        /* display: none; */
+        border-radius: 1rem;
+        margin-top: 2rem;
+    }
+    .top-2{
+        padding: 0;
+    }
+    .top-2 h2{
+        font-size: 22px;
+        margin-bottom: 1rem;
+    }
+    .bottom-2{
+        grid-template-columns: 1fr;
+    }
+    .bottom-2 div{
+        width: 100%;
+        height: 15vh;
+    }
+}
+@media (min-width: 500px){
+    .bottom-3 img{
+        height: 60vh;
+    }
+}
+@media (min-width: 701px){
+    .bottom-3{
+        grid-template-columns: 1fr 1fr;
+    }
+    .bottom-3 div{
+        width: 90%;
+        height: 90%;
+    }
+    .bottom-3 img{
+        height: 45vh;
+    }
+    .bottom-3 h6{
+        font-size: 20px;
+    }
+    .bottom-3 h4{
+        font-size: 18px;
+    }
+    .bottom-3 p{
+        font-size: 16px;
+    }
+    .bottom-2{
+        grid-template-columns: 1fr 1fr;
+    }
+    .top{
+        margin-left: 1.5em;
+    }
+    .top-2 h2{
+        font-size: 30px;
+        margin-bottom: 1rem;
+    }
+    .bottom-2 div{
+        width: 100%;
+    }
+    .bottom-2 div h3{
+        font-size: 22px;
+    }
+    .bottom-2 div p{
+        font-size: 18px;
+    }
+    #arrow{
+        width: 150px;
+        height: 75px;
+    }
+    #arrow img{
+        width: 40%;
+    }
+}
+@media (min-width: 1000px){
+    .top h3{
+        font-size: 28px;
+    }
+    .top div h1{
+        font-size: 65px;
+        width: 100%;
+    }
+    .bottom-3{
+        grid-template-columns: 1fr 1fr;
+    }
+    .bottom-3 div{
+        width: 90%;
+        height: 90%;
+    }
+    .bottom-3 div div{
+        height: 35vh;
+    }
+    .bottom-3 img{
+        height: 45vh;
+    }
+    .bottom-3 h6{
+        font-size: 26px;
+    }
+    .bottom-3 h4{
+        font-size: 24px;
+    }
+    .bottom-3 p{
+        font-size: 22px;
+    }
+    .bottom-2 div{
+        width: 90%;
+    }
+    .top-2 h2{
+        font-size: 30px;
+        margin-bottom: 1rem;
+    }
+    .bottom-2 div h3{
+        font-size: 22px;
+    }
+    .bottom-2 div p{
+        font-size: 18px;
+    }
+    #arrow{
+        width: 150px;
+        height: 75px;
+    }
+    #arrow img{
+        width: 40%;
+    }
+}
+@media (min-width: 1200px){
+    .top h3{
+        font-size: 32px;
+    }
+    .top div h1{
+        font-size: 75px;
+        width: 100%;
+    }
+    .bottom-3 div{
+        width: 90%;
+        height: 80%;
+    }
+    .top-2 h2{
+        font-size: 35px;
+        margin-bottom: 2rem;
+    }
+    .bottom-2 div h3{
+        font-size: 26px;
+    }
+    .bottom-2 div p{
+        font-size: 22px;
+    }
+    #arrow{
+        width: 200px;
+        height: 100px;
+    }
+    #arrow img{
+        width: 50%;
+    }
+}
+
+
+/* End of Speakekers Style */
+
+@media (min-width: 755px)
+{
+    .nav_bar img
+    {
+        display: none;
+    }
+
+    .nav_bar ul
+    {
+        display: flex;
+        justify-content: space-between;
+        top: -26px;
+        backdrop-filter: blur(30px);
+    }
+
+    .nav_bar ul li
+    {
+        padding: 0.6em;
+        margin-left: 1em;
+    }
+
+    .nav_bar ul li:nth-of-type(3)
+    {
+        border: 3px solid rgb(135,206,250);
+        margin-left: 3em;
+        border-radius: 1.2em;
+        padding: 0.7em;
+    }
+
+    .nav_bar ul li:nth-of-type(1):hover, .nav_bar ul li:nth-of-type(2):hover
+    {
+        border-bottom: 2px solid rgb(135,206,250);
+    }
+
+    .nav_bar ul li:nth-of-type(1) a, .nav_bar ul li:nth-of-type(2) a
+    {
+        color: rgb(135,206,250);
+    }
+
+    .image img
+    {
+        width: 60px;
+    }
+
+    .image img:nth-of-type(even)
+    {
+        width: 120px;
+        height: 60px;
+    }
+
+    .Who_To_Attend_And_Requirement, .Register
+    {
+        width: 100%;
+        margin: auto;
+    }
+
+    .Sponsors .partners
+    {
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+        place-items: center;
+    }
+
+    .partners .img
+    {
+        align-self: center;
+    }
+
+    .further_enquiry .Phone
+    {
+        flex-direction: row;
+    }
+
+    .further_enquiry .Phone p:nth-of-type(2)
+    {
+        margin-left: 1.5em;
+    }
+
+    .further_enquiry .Phone p i
+    {
+        margin-right: 0.5em;
+    }
+}
+
+@media (min-width: 1000px)
+{
+    .header
+    {
+        width: 85%;
+        margin: auto;
+    }
+
+    .showcase
+    {
+        width: 85%;
+        margin: auto;
+        margin-top: 7em;
+    }
+
+
+    .Who_To_Attend_And_Requirement, .Register
+    {
+        width: 85%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1200px)
+{
+    .image img:nth-of-type(2)
+    {
+        position: absolute;
+        right: 0;
+        z-index: 2;
+    }
+
+    .nav_bar ul
+    {
+        right: 20em;
+    }
+
+    .header
+    {
+        width: 80%;
+        margin: auto;
+    }
+
+    .showcase
+    {
+        width: 80%;
+        margin: auto;
+        margin-top: 7em;
+    }
+
+    .related_topics
+    {
+        padding: 2em;
+        position: absolute;
+        bottom: 0.5em;
+        left: 10em;
+    }
+
+    .date_time
+    {
+        padding: 2em;
+        position: absolute;
+        bottom: 0.5em;
+        right: 10em;
+    }
+
+    .showcase .sub_topic
+    {
+        padding-right: 20em;
+        font-size: 1.5em;
+    }
+
+    .showcase .topic P:nth-of-type(1)
+    {
+        font-size: 4em;
+    }
+
+    .showcase .topic p:nth-of-type(2)
+    {
+        font-size: 2em;
+    }
+
+    .Who_To_Attend_And_Requirement, .Register
+    {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1200px){
+    .Speakers{
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        padding-left: 7em;
+        padding-right: 6em;
+    }
+    .top{
+        width: 100%;
+        margin-left: 2em;
+    }
+    .top h3{
+        font-size: 24px;
+        text-align: start;
+        margin-left: .1em;
+    }
+    .top div{
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+    }
+    .top div h1{
+        width: 50%;
+        font-size: 60px;
+        text-align: start;
+    }
+    .top div h2{
+        display: block;
+        font-size: 65px;
+        color: black;
+        margin-right: 4rem;
+    }
+    .bottom-3{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 1.5em;
+    }
+    .bottom-3 div{
+        width: 90%;
+    }
+    .bottom-3 h6{
+        font-size: 15px;
+        width: 100%;
+    }
+    .bottom-3 h4{
+        font-size: 14px;
+    }
+    .bottom-3 p{
+        font-size: 12px;
+    }
+    #arrow{
+        width: 100px;
+        height: 50px;
+    }
+    #arrow img{
+        width: 50%;
+    }
+    .top-2{
+        padding-top: 3rem;
+    }
+    .top-2 h2{
+        font-size: 30px;
+        margin-bottom: 2rem;
+    }
+    .bottom-2{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .bottom-2 div{
+        height: 15vh;
+        width: 85%;
+    }
+    .bottom-3 img{
+        height: 30vh;
+    }
+    .bottom-3 div div{
+        padding: 1rem;
+        height: 21vh;
+    }
+    .bottom-2 div h3{
+        font-size: 16px;
+    }
+    .bottom-2 div p{
+        font-size: 12px;
+    }
+    #button::after{
+        display: none;
+        content: "";
+        width: 277px;
+        border-radius: 100px;
+        height: 3px;
+        margin-top: 2rem;
+        background: rgb(135,206,250);
+        margin-bottom: 1rem;
+        position: absolute;
+        top: 139rem;
+    }
+}
+
+@media (min-width: 1555px)
+{
+    .nav_bar ul
+    {
+        right: 28em;
+    }
+
+    .Who_To_Attend_And_Requirement
+    {
+        margin-bottom: 3em;
+    }
+
+    .Who_To_Attend_And_Requirement, .Accomodation
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .Who_to_Attend, .Requirement
+    {
+        margin-bottom: 0;
+    }
+
+    .Requirement section
+    {
+        margin-top: 2em;
+    }
+
+    .Who_to_Attend section p, .Requirement section p
+    {
+        margin-bottom: 2.5em;
+    }
+}
+

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <title>Interactive card details form</title>
+  <style>
+    *{
+        font-family: 'Space Grotesk', sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body{
+        min-height: 100vh;
+      }
+      .hidden{
+        display: none !important;
+      }
+      .error{
+        border: 2px solid red;
+      }
+      .error-message{
+        gap: 0;
+      }
+      .error-message::after{
+        content: "can't be blank";
+        color: red;
+        margin-top: .2rem;
+      }
+      .error-2{
+        border: 2px solid red;
+      }
+      .error-message-2{
+        gap: 0;
+      }
+      .error-message-2::after{
+        content: "can't be a number";
+        color: red;
+        margin-top: .2rem;
+      }
+      .error-3{
+        border: 2px solid red;
+      }
+      .error-message-3{
+        gap: 0;
+      }
+      .error-message-3::after{
+        content: "can't be a letter";
+        color: red;
+        margin-top: .2rem;
+      }
+      .error-4{
+        border: 2px solid red;
+      }
+      .error-message-4{
+        gap: 0;
+      }
+      .error-message-4::after{
+        content: "Please fill properly";
+        color: red;
+        margin-top: .2rem;
+      }
+      .container{
+        display: flex;
+        align-items: center;
+      }
+      .left-section{
+        background-image: url(images/bg-main-desktop.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+        width: 50%;
+        min-height: 100vh;
+      }
+      .cards{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 15%;
+        left: 52%;
+        gap: 2rem;
+      }
+      .front-card{
+        position: relative;
+        right: 20%;
+      }
+      .card-logo{
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+      }
+      #number{
+        position: absolute;
+        color: white;
+        bottom: 5rem;
+        left: 1rem;
+        letter-spacing: 2px;
+        width: 90%;
+        border: none;
+        background: transparent;
+        outline: none;
+        caret-color: transparent;
+        font-size: 30px;
+      }
+      #number::placeholder{
+        color: white;
+        font-size: 30px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+      }
+      .card-info{
+        position: absolute;
+        bottom: 2rem;
+        left: 1rem;
+        right: 3rem;
+        display: flex;
+        color: white;
+        justify-content: space-between;
+      }
+      .back-card{
+        position: relative;
+      }
+      #name{
+        position: absolute;
+        color: white;
+        bottom: 0.02rem;
+        width: 90%;
+        border: none;
+        background: transparent;
+        outline: none;
+        caret-color: transparent;
+        text-transform: uppercase;
+      }
+      #name::placeholder{
+        color: white;
+        font-family: 'Space Grotesk', sans-serif;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+      #month{
+        position: absolute;
+        color: white;
+        bottom: 0.02rem;
+        left: 19.5rem;
+        letter-spacing: 2px;
+        width: 20%;
+        border: none;
+        background: transparent;
+        outline: none;
+        caret-color: transparent;
+      }
+      #month::placeholder{
+        color: white;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16px;
+      }
+      #year{
+        position: absolute;
+        color: white;
+        bottom: 0.02rem;
+        left: 22rem;
+        width: 220%;
+        border: none;
+        background: transparent;
+        outline: none;
+        caret-color: transparent;
+      }
+      #year::placeholder{
+        color: white;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16px;
+      }
+      .card-info span{
+        margin-left: 21.8rem;
+        margin-bottom: .65rem;
+      }
+      #cvc{
+        position: absolute;
+        right: 3rem;
+        top: 6.3rem;
+        color: hsl(270, 3%, 87%);
+        width: 12%;
+        border: none;
+        background: transparent;
+        outline: none;
+        caret-color: transparent;
+      }
+      #cvc::placeholder{
+        color: white;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16px;
+      }
+      .right-section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      .right-section form{
+        display: grid;
+        gap: 1rem;
+        width: 350px;
+      }
+      label{
+        color: hsl(278, 68%, 11%);
+        margin-bottom: .3rem;
+        text-transform: uppercase;
+      }
+      input{
+        padding: .5rem;
+        font-size: 18px;
+        border: 1px solid hsl(279, 6%, 55%);
+        border-radius: 6px;
+      }
+      .grid-1{
+        display: flex;
+        flex-direction: column;
+        grid-column: 2 span;
+      }
+      .grid-2{
+        display: flex;
+        flex-direction: column;
+        grid-column: 2 span;
+      }
+      .grid-3{
+        display: flex;
+        flex-direction: column;
+      }
+      .grid-4{
+        display: flex;
+        flex-direction: column;
+        grid-column: 1 span;
+      }
+      .card-information{
+        display: flex;
+        grid-column: 2 span;
+        gap: 1rem;
+      }
+      #card-date{
+        display: flex;
+        flex-direction: column;
+        grid-column: 1 span;
+      }
+      #card-date .two-inp{
+        display: flex;
+      }
+      .two-inp div{
+        flex-direction: column;
+      }
+      #card-date div input{
+        width: 70px;
+        margin-inline: .5rem;
+        margin-left: 0;
+      }
+      #card-cvc{
+        width: 100%;
+      }
+      form button{
+        grid-column: 2 span;
+        font-size: 18px;
+        height: 50px;
+        color: white;
+        border-radius: 6px;
+        background: hsl(278, 68%, 11%);
+        cursor: pointer;
+      }
+      form button:hover{
+        background: white;
+        color: hsl(278, 68%, 11%);
+      }
+      .thank{
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .thank h1{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+      .thank p{
+        font-size: 18px;
+        color: hsl(279, 6%, 55%);
+      }
+      .thank button{
+        color: white;
+        width: 100%;
+        border-radius: 6px;
+        padding: 1rem;
+        font-size: 18px;
+        background: hsl(278, 68%, 11%);
+        cursor: pointer;
+      }
+      .thank button:hover{
+        background: white;
+        color: hsl(278, 68%, 11%);
+      }
+
+      @media screen and (max-width: 500px){
+        .left-section{
+          background-image: url(images/bg-main-mobile.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+          width: 100%;
+          min-height: 48vh;
+          margin-bottom: 7em;
+        }
+        .container{
+          flex-direction: column;
+          min-height: 150vh;
+          justify-content: start;
+          width: 100%;
+        }
+        .cards{
+          top: -2em;
+        }
+        .front-card{
+          right: 100%;
+          top: 11.2em;
+          z-index: 200;
+        }
+        .front-card-img{
+          width: 165%;
+        }
+        .back-card{
+          right: 70%;
+          bottom: 9em;
+        }
+        .back-card-img{
+          width: 165%;
+        }
+        .card-logo{
+          width: 30%;
+        }
+        #number{
+          top: 3.8em;
+          left: .4em;
+          width: 155%;
+          height: 20%;
+          font-size: 1.48em;
+        }
+        #number::placeholder{
+          font-size: 1em;
+          font-weight: 400;
+        }
+        .card-info{
+          left: .7em;
+          bottom: 1em;
+          align-items: center;
+        }
+        #name{
+          width: 150%;
+          font-size: .8em;
+        }
+        #name::placeholder{
+          font-size: 1em;
+        }
+        #month{
+          left: 16.3em;
+          width: 30%;
+          font-size: .9em;
+          letter-spacing: .2em;
+        }
+        #month::placeholder{
+          font-size: 1em;
+          letter-spacing: .2em;
+        }
+        #year{
+          left: 19em;
+          width: 30%;
+          font-size: .9em;
+          letter-spacing: .2em;
+        }
+        #year::placeholder{
+          font-size: 1em;
+          letter-spacing: .2em;
+        }
+        .divider{
+          position: absolute;
+          left: 16.9em;
+          bottom: .5em;
+        }
+        #cvc{
+          left: 14em;
+          top: 3.8em;
+          width: 30%;
+        }
+        #cvc::placeholder{
+          font-size: .8em;
+          letter-spacing: .1em;
+        }
+        .grid-1{
+          margin-bottom: .5em;
+        }
+        .grid-2{
+          margin-bottom: .5em;
+        }
+        .card-information{
+          margin-bottom: .5em;
+        }
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <div class="cards">
+        <div class="front-card">
+          <img class="front-card-img" src="images/bg-card-front.png" alt="">
+          <div class="card-container">
+            <img class="card-logo" src="images/card-logo.svg">
+            <input id="number" placeholder="0000 0000 0000 0000" disabled>
+            <div class="card-info">
+              <input id="name" placeholder="Jane Appleseed" disabled>
+              <span id="date">
+                <input id="month" placeholder="00" disabled>
+                <p class="divider">/</p>
+                <input id="year" placeholder="00" disabled>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="back-card">
+          <img class="back-card-img" src="images/bg-card-back.png">
+          <input id="cvc" placeholder="000" disabled>
+        </div>
+      </div>
+    </div>
+    <div class="right-section">
+      <form class="form">
+        <div class="grid-1">
+          <label for="card-name">Cardholder Name</label>
+          <input type="text" id="card-name" placeholder="e.g. Jane Appleseed" required>
+        </div>
+        <div class="grid-2">
+          <label for="card-number">Card Number</label>
+          <input type="text" id="card-number" placeholder="e.g. 1234 5678 9123 0000" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength)" minlength="19" maxlength="19" required pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}">
+        </div>
+        <div class="card-information">
+          <div id="card-date">
+            <label for="card-date">Exp. Date (MM/YY)</label>
+            <div class="two-inp">
+              <div>
+                <input type="number" placeholder="MM" id="card-month" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength)" minlength="2" maxlength="2" required>
+              </div>
+              <div>
+                <input type="number" placeholder="YY" id="card-year" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength)" minlength="2" maxlength="2" required>
+              </div>
+            </div>
+          </div>
+          <div class="grid-4">
+            <label for="card-cvc">CVC</label>
+            <input type="number" id="card-cvc" placeholder="e.g. 123" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength)" minlength="3" maxlength="3" required>
+          </div>
+        </div>
+        <button id="submit-btn" type="submit">Confirm</button>
+      </form>
+      <div class="thank hidden">
+        <img src="images/icon-complete.svg">
+        <h1 class="head">Thank you!</h1>
+        <p>We've added your card details</p>
+        <button id="continue-btn">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="home.js"></script>
+</body>
+</html>

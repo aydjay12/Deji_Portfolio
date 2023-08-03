@@ -1,0 +1,244 @@
+:root
+{
+    --primary--color: rgb(214, 180, 26);
+    --primary--text--color: rgb(67, 55, 1);
+}
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+    list-style-type: none;
+}
+
+
+.main_container
+{
+    padding: 1em;
+    background-image: url("image/ARUA-2023-biennial-conference_University-of-Lagos-1024x488_edited.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.home
+{
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .image
+{
+    width: 170px;
+}
+
+.header .image img
+{
+    width: 100%;
+}
+
+
+.nav_bar ul li
+{
+    padding: 1em;
+    border: 2px solid var(--primary--text--color);
+    border-radius: 1.2em 0 1.2em 0;
+}
+
+.nav_bar ul li a
+{
+    text-decoration: none;
+    color: var(--primary--text--color);
+    backdrop-filter: blur(50px);
+}
+
+.showcase
+{
+    margin-top: 5em;
+}
+
+.sub_topic p
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary--text--color);
+}
+
+.topic p:nth-of-type(1)
+{
+    margin: 0.7em 0 0.7em 0;
+    font-weight: bold;
+    color: var(--primary--text--color);
+}
+
+.topic p:nth-of-type(2)
+{
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: 1px;
+    color: var(--primary--color);
+}
+
+.showcase .date_time
+{
+    margin-top: 4em;
+    backdrop-filter: blur(50px);
+    padding: 2em;
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    border: 2px solid var(--primary--text--color);
+    border-radius: 3em 0 3em 0;
+}
+
+.showcase .date_time section:nth-of-type(2) p
+{
+    margin: 1em 0em 1em 0em;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--primary--text--color);
+}
+
+.showcase .date_time i
+{
+    margin-right: 1em;
+    font-size: 1.5em;
+}
+
+.showcase .date_time section:nth-of-type(2)
+{
+    border-top: 1px solid var(--primary--color);
+}
+
+.showcase .date_time section:nth-of-type(1) 
+{
+    margin-bottom: 1em;
+}
+
+.showcase .date_time section:nth-of-type(1) p:nth-of-type(1)
+{
+    font-size: 0.9em;
+    opacity: 0.5;
+    margin-bottom: 0.3em;
+    color: var(--primary--text--color);
+}
+
+.showcase .date_time section:nth-of-type(1) p:nth-of-type(2)
+{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--primary--text--color);
+}
+
+
+@media (min-width: 400px)
+{
+    .showcase
+    {
+        margin-top: 7.5em;
+    }
+
+    .showcase .date_time
+    {
+        bottom: 60px;
+    }
+
+    .date_time
+    {
+        display: none;
+    }
+
+}
+
+
+@media (min-width: 768px)
+{
+    .home
+    {
+        width: 90%;
+        margin: auto;
+    }
+
+    .date_time
+    {
+        position: absolute;
+        right: 0;
+        bottom: 60px;
+    }
+
+    .showcase .sub_topic p 
+    {
+        padding-right: 5em;
+        font-size: 1.5em;
+    }
+
+    .topic p:nth-of-type(1)
+    {
+        margin-bottom: 0.5em;
+    }
+
+    .topic p:nth-of-type(2)
+    {
+        font-weight: bold;
+        font-size: 2.5em;
+        padding-right: 3.5em;
+    }
+}
+
+
+@media (min-width: 1200px)
+{
+    .home
+    {
+        width: 70%;
+        margin: auto;
+    }
+
+    .date_time
+    {
+        position: absolute;
+        right: 0;
+        bottom: 60px;
+    }
+
+    .showcase
+    {
+        margin-top: 7em;
+    }
+
+    .showcase .sub_topic p 
+    {
+        padding-right: 15em;
+        font-size: 1.5em;
+    }
+
+    .topic p:nth-of-type(1)
+    {
+        margin-bottom: 0.5em;
+    }
+
+    .topic p:nth-of-type(2)
+    {
+        font-weight: bold;
+        font-size: 3em;
+        padding-right: 4em;
+    }
+
+    .date_time
+    {
+        display: block;
+    }
+}

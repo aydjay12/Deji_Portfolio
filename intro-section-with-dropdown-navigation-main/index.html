@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Intro section with dropdown navigation</title>
+  <style>
+    *{
+        font-family: 'Epilogue', sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body{
+        width: 100%;
+        background: hsl(0, 0%, 98%);
+      }
+      .container{
+        border: 3px solid silver;
+      }
+      .header{
+        min-height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .left{
+        width: 45%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-left: 2rem;
+      }
+      .logo{
+        width: 20%;
+        padding-right: 3rem;
+      }
+      .left button{
+        font-size: 15px;
+        font-weight: 500;
+        background: transparent;
+        border: none;
+        color: black;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: hsl(0, 0%, 41%);
+      }
+      .left button:hover{
+        color: hsl(0, 0%, 8%);
+      }
+      #features{
+        width: 15%;
+        position: relative;
+      }
+      #features-list{
+        background: white;
+        width: 11%;
+        min-height: 21vh;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 15px 22px 44px 7px rgba(192,192,192,0.75);
+        -webkit-box-shadow: 15px 22px 44px 7px rgba(192,192,192,0.75);
+        -moz-box-shadow: 15px 22px 44px 7px rgba(192,192,192,0.75);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: start;
+        position: absolute;
+        top: 4rem;
+        left: 8rem;
+        padding: 1rem;
+        display: none;
+      }
+      #features-list div{
+        display: flex;
+      }
+      #features-list div  p{
+        padding-left: 1rem;
+      }
+      #company-list{
+        background: white;
+        width: 9%;
+        min-height: 18vh;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 15px 22px 44px 7px rgba(192,192,192,0.75);
+        -webkit-box-shadow: 15px 22px 44px 7px rgba(192,192,192,0.75);
+        -moz-box-shadow: 15px 22px 44px 7px rgba(192,192,192,0.75);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: start;
+        position: absolute;
+        top: 4rem;
+        left: 18em;
+        padding: 1rem;
+        display: none;
+      }
+      #company-list div{
+        display: flex;
+      }
+      #company{
+        width: 16%;
+        position: relative;
+      }
+      #down1{
+        position: absolute;
+        width: 14%;
+        right: 0;
+      }
+      #down2{
+        position: absolute;
+        width: 13%;
+        right: 0;
+      }
+      #up1{
+        position: absolute;
+        width: 14%;
+        right: 0;
+        display: none;
+      }
+      #up2{
+        position: absolute;
+        width: 13%;
+        right: 0;
+        display: none;
+      }
+      .right{
+        width: 15%;
+        display: flex;
+        justify-content: space-around;
+      }
+      .login{
+        font-size: 15px;
+        font-weight: 500;
+        background: transparent;
+        border: none;
+        color: hsl(0, 0%, 41%);
+        cursor: pointer;
+      }
+      .login:hover{
+        color: hsl(0, 0%, 8%);
+      }
+      .register{
+        font-size: 15px;
+        font-weight: 500;
+        background: transparent;
+        border: none;
+        color: hsl(0, 0%, 41%);
+        cursor: pointer;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: .5em;
+        padding-left: .7em;
+        padding-right: .7em;
+      }
+      .register:hover{
+        color: hsl(0, 0%, 8%);
+        border: 2px solid black;
+      }
+      .body{
+        display: flex;
+        padding: 3rem;
+        padding-left: 10rem;
+        min-height: 50vh;
+        position: relative;
+      }
+      .horizontal-1{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50%;
+        padding-top: 5.3rem;
+        padding-left: 1em;
+      }
+      .top{
+        display: flex;
+        flex-direction: column;
+      }
+      .horizontal-1 h1{
+        font-size: 75px;
+        width: 88%;
+        margin-bottom: .4em;
+      }
+      .horizontal-1 p{
+        font-size: 19px;
+        width: 80%;
+        line-height: 1.4em;
+        color: hsl(0, 0%, 41%);
+        margin-bottom: 2.5em;
+      }
+      .horizontal-1 button{
+        width: 25%;
+        min-height: 6.8vh;
+        background: black;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        border: 3px solid black;
+        border-radius: 15px;
+        cursor: pointer;
+        margin-bottom: 5em;
+      }
+      .horizontal-1 button:hover{
+        background: white;
+        color: black;
+      }
+      .icons{
+        width: 72%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .icons img{
+        width: 18%;
+      }
+      .horizontal-2{
+        width: 50%;
+        padding-left: 6em;
+      }
+      .horizontal-2 img{
+        width: 85%;
+      }
+      .header-mobile{
+        display: none;
+      }
+      .mobile-pic{
+        display: none;
+      }
+      .sidebar-mobile{
+        display: none;
+      }
+
+      @media screen and (max-width: 800px){
+        .container{
+          min-height: 120vh;
+          position: relative;
+        }
+        .header-mobile{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 3rem;
+        }
+        .logo-mobile{
+          width: 23%;
+        }
+        .menu-mobile{
+          width: 10%;
+          cursor: pointer;
+        }
+        .left{
+          display: none;
+        }
+        .right{
+          display: none;
+        }
+        .body{
+          flex-direction: column;
+          padding: 0;
+        }
+        .mobile-pic{
+          display: flex;
+          width: 100%;
+        }
+        .mobile-pic img{
+          width: 100%;
+        }
+        .horizontal-1{
+          padding-top: 2rem;
+          width: 100%;
+        }
+        .top{
+          min-height: 40vh;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding-top: 2rem;
+        }
+        .horizontal-1 h1{
+          font-size: 60px;
+          width: 100%;
+          text-align: center;
+        }
+        .horizontal-1 p{
+          width: 90%;
+          text-align: center;
+          font-size: 24px;
+          line-height: 35px;
+          color: hsl(0, 0%, 41%);
+        }
+        .horizontal-1 button{
+          width: 25%;
+          min-height: 6.8vh;
+          background: black;
+          color: white;
+          font-size: 22px;
+          font-weight: 500;
+          border: 3px solid black;
+          border-radius: 15px;
+          cursor: pointer;
+        }
+        .horizontal-1 button:hover{
+          background: white;
+          color: black;
+        }
+        .icons{
+          padding-top: 3rem;
+          padding-bottom: 8rem;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+        .icons img{
+          width: 15%;
+        }
+        .horizontal-2{
+          display: none;
+        }
+        .sidebar{
+          position: fixed;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 50%;
+          flex-direction: column;
+          background: white;
+          padding-top: 1rem;
+          z-index: 200;
+        }
+        .close-menu{
+          width: 100%;
+          display: flex;
+          justify-content: end;
+        }
+        .close-menu img{
+          width: 25%;
+          padding: 25px;
+          cursor: pointer;
+        }
+        .pages-mobile{
+          display: flex;
+          flex-direction: column;
+          padding-left: 2.5rem;
+          font-size: 22px;
+          color: hsl(0, 0%, 41%);
+        }
+        #features-mobile{
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          justify-content: space-around;
+          align-items: center;
+        }
+        #features-mobile button{
+          display: flex;
+          align-items: center;
+          align-self: flex-start;
+          font-size: 22px;
+          background: transparent;
+          border: none;
+          color: hsl(0, 0%, 41%);
+          width: 100%;
+          position: relative;
+          margin-bottom: 1em;
+          margin-top: .5em;
+        }
+        #up1-mobile{
+          width: 5%;
+          position: absolute;
+          left: 7rem;
+          display: none;
+        }
+        #down1-mobile{
+          width: 5%;
+          position: absolute;
+          left: 7rem;
+        }
+        #features-list-mobile{
+          display: flex;
+          flex-direction: column;
+          width: 80%;
+          justify-content: space-around;
+          padding-top: 1rem;
+          margin-bottom: 1em;
+          display: none;
+        }
+        #features-list-mobile div{
+          display: flex;
+          min-height: 30%;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding-right: 5rem;
+        }
+        #features-mobile div img{
+          width: 15%;
+        }
+        #company-mobile{
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          justify-content: space-around;
+          align-items: center;
+        }
+        #company-mobile button{
+          display: flex;
+          align-items: center;
+          align-self: flex-start;
+          font-size: 22px;
+          background: transparent;
+          border: none;
+          color: hsl(0, 0%, 41%);
+          width: 100%;
+          position: relative;
+          margin-bottom: 1em;
+          margin-top: .5em;
+        }
+        #up2-mobile{
+          width: 5%;
+          position: absolute;
+          left: 7rem;
+          display: none;
+        }
+        #down2-mobile{
+          width: 5%;
+          position: absolute;
+          left: 7rem;
+        }
+        #company-list-mobile{
+          display: flex;
+          flex-direction: column;
+          width: 80%;
+          justify-content: space-around;
+          min-height: 20vh;
+          padding-top: 1rem;
+          display: none;
+        }
+        #company-list-mobile div{
+          display: flex;
+          min-height: 10%;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding-right: 5rem;
+        }
+        #company-mobile div img{
+          width: 15%;
+        }
+        .sign-in{
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          align-items: center;
+          justify-content: space-around;
+          min-height: 20vh;
+        }
+        .sign-in button{
+          width: 80%;
+        }
+      }
+
+      @media screen and (max-width: 450px){
+        .header-mobile{
+          padding: 2em;
+        }
+        .top h1{
+          font-size: 40px;
+        }
+        .top p{
+          font-size: 18px;
+          line-height: 1.4em;
+        }
+        .top button{
+          font-size: 15px;
+          width: 100%;
+          height: 9vh;
+          margin-bottom: 0;
+        }
+        .icons{
+          padding-bottom: 4em;
+        }
+        .icons img{
+          width: 20%;
+        }
+        .horizontal-1{
+          padding-left: 0;
+        }
+        .sidebar{
+          width: 60%;
+        }
+        .pages-mobile{
+          font-size: 16px;
+          padding-left: 1.6em;
+        }
+        #features-mobile button{
+          font-size: 16px;
+        }
+        #company-mobile button{
+          font-size: 16px;
+        }
+        #features-list-mobile{
+          min-height: 60%;
+          width: 100%;
+          padding-top: .5rem;
+          margin-bottom: 1em;
+        }
+        #features-list-mobile div{
+          padding-right: 4.5rem;
+        }
+        #company-list-mobile{
+          min-height: 15vh;
+          padding-top: .1rem;
+        }
+        .close-menu img{
+          width: 30%;
+        }
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar sidebar-mobile">
+      <div class="close-menu"><img id="close-mobile" src="images/icon-close-menu.svg"></div>
+      <div class="pages-mobile" id="pages-mobile">
+        <div id="features-mobile"><button id="features-mobile-button">Features <img id="up1-mobile" src="images/icon-arrow-up.svg"> <img id="down1-mobile" src="images/icon-arrow-down.svg"></button>
+          <div id="features-list-mobile">
+            <div><img src="images/icon-todo.svg"> <p>Todo List</p> </div>
+            <div><img src="images/icon-calendar.svg"> <p>Calendar</p> </div>
+            <div><img src="images/icon-reminders.svg"> <p>Reminders</p> </div>
+            <div><img src="images/icon-planning.svg"> <p>Planning</p> </div>
+          </div>
+        </div>
+        <div id="company-mobile"><button id="company-mobile-button">Company <img id="up2-mobile" src="images/icon-arrow-up.svg"> <img id="down2-mobile" src="images/icon-arrow-down.svg"></button>
+          <div id="company-list-mobile">
+            <div> History </div>
+            <div> Our Team </div>
+            <div> Blog </div>
+          </div>
+        </div>
+        <div class="careers-mobile" style="margin-bottom: 1em; margin-top: .5em;">Careers</div>
+        <div class="about-mobile" style="margin-bottom: 1em; margin-top: .5em;">About</div>
+      </div>
+      <div class="sign-in">
+        <button class="login">Login</button>
+        <button class="register">Register</button>
+      </div>
+    </div>
+    <div class="header">
+      <div class="header-mobile">
+        <img class="logo-mobile" src="images/logo.svg">
+        <img class="menu-mobile" src="images/icon-menu.svg">
+      </div>
+      <div class="left">
+        <img class="logo" src="images/logo.svg">
+        <button id="features">Features <img id="down1" src="images/icon-arrow-down.svg"> <img id="up1" src="images/icon-arrow-up.svg"></button>
+        <button id="company">Company <img id="down2" src="images/icon-arrow-down.svg"> <img id="up2" src="images/icon-arrow-up.svg"></button>
+        <button>Careers</button>
+        <button>About</button>
+      </div>
+      <div id="features-list">
+        <div><img src="images/icon-todo.svg"> <p>Todo List</p> </div>
+        <div><img src="images/icon-calendar.svg"> <p>Calendar</p> </div>
+        <div><img src="images/icon-reminders.svg"> <p>Reminders</p> </div>
+        <div><img src="images/icon-planning.svg"> <p>Planning</p> </div>
+      </div>
+      <div id="company-list">
+        <div> History </div>
+        <div> Our Team </div>
+        <div> Blog </div>
+      </div>
+      <div class="right">
+        <button class="login">Login</button>
+        <button class="register">Register</button>
+      </div>
+    </div>
+    <div class="body">
+      <div class="mobile-pic">
+        <img src="images/image-hero-mobile.png">
+      </div>
+      <div class="horizontal-1">
+        <div class="top">
+          <h1>Make remote work</h1>
+          <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+          <button>Learn more</button>
+        </div>
+        <div class="icons">
+          <img src="images/client-databiz.svg">
+          <img src="images/client-audiophile.svg">
+          <img src="images/client-meet.svg">
+          <img src="images/client-maker.svg">
+        </div>
+      </div>
+      <div class="horizontal-2">
+        <img src="images/image-hero-desktop.png">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var featuresList = document.getElementById('features-list');
+    var companyList = document.getElementById('company-list');
+    var features = document.getElementById('features');
+    var company = document.getElementById('company');
+    var down1 = document.getElementById('down1');
+    var down2 = document.getElementById('down2');
+    var up1 = document.getElementById('up1');
+    var up2 = document.getElementById('up2');
+    var sidebar = document.querySelector('.sidebar-mobile');
+    var menuButton = document.querySelector('.menu-mobile');
+    var closeButton = document.getElementById('close-mobile');
+    var featuresListMobile = document.getElementById('features-list-mobile');
+    var companyListMobile = document.getElementById('company-list-mobile');
+    var featuresMobile = document.getElementById('features-mobile-button');
+    var companyMobile = document.getElementById('company-mobile-button');
+    var pagesMobile = document.getElementById('pages-mobile');
+    var featuresMobileDiv = document.getElementById('features-mobile');
+    var companyMobileDiv = document.getElementById('company-mobile');
+    var down1Mobile = document.getElementById('down1-mobile');
+    var down2Mobile = document.getElementById('down2-mobile');
+    var up1Mobile = document.getElementById('up1-mobile');
+    var up2Mobile = document.getElementById('up2-mobile');
+
+    function featuresClick(){
+      featuresList.style.display = 'flex';
+      down1.style.display = 'none';
+      up1.style.display = 'flex';
+    }
+    function companyClick(){
+      companyList.style.display = 'flex';
+      down2.style.display = 'none';
+      up2.style.display = 'flex';
+    }
+    function featuresClickOut(){
+      featuresList.style.display = 'none';
+      down1.style.display = 'flex';
+      up1.style.display = 'none';
+    }
+    function companyClickOut(){
+      companyList.style.display = 'none';
+      down2.style.display = 'flex';
+      up2.style.display = 'none';
+    }
+    function menuClick(){
+      sidebar.style.display = 'flex';
+    }
+    function closeClick(){
+      sidebar.style.display = 'none';
+    }
+    function featuresMobileClick(){
+      featuresListMobile.style.display = 'flex';
+      featuresMobileDiv.style.minHeight = '35vh';
+      pagesMobile.style.minHeight = '50vh';
+      down1Mobile.style.display = 'none';
+      up1Mobile.style.display = 'flex';
+    }
+    function featuresMobileClickOut(){
+      featuresListMobile.style.display = 'none';
+      featuresMobileDiv.style.minHeight = '0';
+      pagesMobile.style.minHeight = '25vh';
+      down1Mobile.style.display = 'flex';
+      up1Mobile.style.display = 'none';
+    }
+    function companyMobileClick(){
+      companyListMobile.style.display = 'flex';
+      companyMobileDiv.style.minHeight = '25vh';
+      pagesMobile.style.minHeight = '40vh';
+      down2Mobile.style.display = 'none';
+      up2Mobile.style.display = 'flex';
+    }
+    function companyMobileClickOut(){
+      companyListMobile.style.display = 'none';
+      companyMobileDiv.style.minHeight = '0';
+      pagesMobile.style.minHeight = '25vh'
+      down2Mobile.style.display = 'flex';
+      up2Mobile.style.display = 'none';
+    }
+
+    features.addEventListener('mouseenter', featuresClick);
+    features.addEventListener('mouseleave', featuresClickOut);
+    company.addEventListener('mouseover', companyClick);
+    company.addEventListener('mouseout', companyClickOut);
+    menuButton.addEventListener('click', menuClick);
+    closeButton.addEventListener('click', closeClick);
+    down1Mobile.addEventListener('click', featuresMobileClick);
+    up1Mobile.addEventListener('click', featuresMobileClickOut);
+    down2Mobile.addEventListener('click', companyMobileClick);
+    up2Mobile.addEventListener('click', companyMobileClickOut);
+  </script>
+</body>
+</html>
