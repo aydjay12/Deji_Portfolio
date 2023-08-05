@@ -49,12 +49,38 @@
             width: 50%;
             justify-content: space-around;
         }
-        .pages button{
+        .pages a{
+            position: relative;
+            cursor: pointer;
+        }
+        .pages a::after{
+            content: '';
+            width: 0;
+            height: 3px;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background:
+                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);
+            transition: width 0.4s;
+            margin-bottom: -.3em;
+        }
+        .pages a:hover::after{
+            width: 100%;
+        }
+        .pages a:hover{
+            transform: scale(1.1);
+        }
+        .pages a{
             font-size: 1em;
             color: white;
             border: none;
             background: transparent;
             cursor: pointer;
+            text-decoration: none;
+            transition: .3s;
         }
         .contact-logo{
             width: 10%;
@@ -67,6 +93,10 @@
         .contact-logo img{
             width: 50%;
             cursor: pointer;
+            transition: .3s;
+        }
+        .contact-logo img:hover{
+            transform: scale(1.3);
         }
         .home-page{
             padding-top: 4em;
@@ -102,10 +132,10 @@
         }
         .horizontal-2{
             width: 30%;
+            position: relative;
         }
         .horizontal-2 img{
             width: 100%;
-            border-radius: 3%;
             background: radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 3px, transparent 3px) 0% 0%/8px 8px no-repeat,
                 radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 3px, transparent 3px) 100% 0%/8px 8px no-repeat,
                 radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 3px, transparent 3px) 0% 100%/8px 8px no-repeat,
@@ -115,6 +145,22 @@
                 linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
                 linear-gradient(65deg, #e56a25 0%, #f0c318 100%);
             padding: 7px;
+            opacity: 0;
+            animation: appear 1s linear forwards;
+            animation-delay: 4s;
+        }
+        .horizontal-2::after{
+            content: '';
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background:
+                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
+                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);
+            position: absolute;
+            animation: rev-img 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+            animation-delay: 3.6s;
         }
         .about-page{
             padding-top: 4em;
@@ -211,6 +257,9 @@
         .tech-logos img{
             width: 100%;
         }
+        .tech-logos img:hover{
+            filter: grayscale(1);
+        }
         .projects{
             padding-top: 8em;
             display: flex;
@@ -246,7 +295,33 @@
             width: 100%;
             border-radius: .2em;
             margin-bottom: .4em;
+            transition: .3s;
+            cursor: pointer;
+            box-shadow: 10px 15px 25px 0 rgba(0,0,0,.2);
         }
+        .project-tiles div img:hover{
+            border-radius: .4em;
+            margin-top: .2em;
+            margin-left: .1em;
+        }
+        /* .project-tiles div{
+            position: relative;
+            overflow: hidden;
+        }
+        .project-tiles div::before{
+            content: '';
+            position: absolute;
+            top: 1em;
+            left: 1em;
+            width: 100px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: skew(-30deg);
+            transition: 0.5s;
+        }
+        .project-tiles div:hover::before{
+            left: 250px;
+        } */
         .project-tiles div h2{
             font-size: 1.2em;
             text-align: center;
@@ -349,22 +424,59 @@
         .arrow{
             display: none;
             position: fixed;
-            width: 3%;
+            width: 4%;
+            height: 5vh;
             bottom: 2em;
-            right: 1em;
+            right: 2em;
             cursor: pointer;
             z-index: 99;
             background:
             linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
             linear-gradient(65deg, #e56a25 0%, #f0c318 100%);
+            background-image: url(img/white\ up\ arrow\ icon.png);
+            background-position: center right;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-blend-mode: saturation;
             border-radius: 50%;
+            transition: .5s;
+        }
+        .arrow:hover {
+            transform: scale(1.3);
+            filter: invert(.3);
+        }
+        .arrow:focus {
+            outline: none;
+        }
+
+        @keyframes appear{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        @keyframes rev-img{
+            0%{
+                left: 0;
+                width: 0%;
+            }
+            50%{
+                left: 0;
+                width: 100%;
+            }
+            100%{
+                left: 100;
+                width: 0%;
+            }
         }
 
         @media screen and (max-width: 1024px){
             .main-container{
                 width: 85%;
             }
-            .pages button{
+            .pages a{
                 font-size: .8em;
             }
             .horizontal-1 h2{
@@ -389,7 +501,7 @@
             .logo p{
                 font-size: .6em;
             }
-            .pages button{
+            .pages a{
                 font-size: .6em;
             }
             .horizontal-1 h2{
@@ -504,9 +616,6 @@
             .horizontal-2{
                 width: 100%;
             }
-            .horizontal-2 img{
-                width: 50vh;
-            }
             .about-me p{
                 margin-bottom: 3em;
             }
@@ -557,20 +666,12 @@
             }
             .arrow{
                 display: none;
-                position: fixed;
                 width: 10%;
                 bottom: 2em;
                 right: 1em;
-                cursor: pointer;
-                z-index: 99;
-                background:
-                linear-gradient(346deg, #f64c20 0%, rgba(236,142,10,0.26) 10.977%, rgba(136,27,205,0.53) 34.389%, rgba(225,6,206,0.91) 79.494%, transparent 100%),
-                linear-gradient(65deg, #e56a25 0%, #f0c318 100%);
-                border-radius: 50%;
             }
 
         }
-
 
     </style>
 </head>
@@ -578,31 +679,31 @@
 
     <div class="container">
         <div class="main-container">
-            <img class="arrow" id="arrow" src="img/white up arrow icon.png" alt="">
-            <div class="header" id="header">
+            <!-- <img class="arrow" id="arrow" src="img/white up arrow icon.png" alt=""> -->
+            <section class="header" id="header">
                 <div class="logo">
                     <img src="img/portfolio_logo.png" alt=""><p>Portfolio</p>
                 </div>
-                <div class="pages">
-                    <a href="#home"><button>Home</button></a>
-                    <a href="#about"><button>About me</button></a>
-                    <a href="#technologies"><button>Technologies</button></a>
-                    <a href="#projects"><button>Projects</button></a>
-                    <a href="#contact"><button>Contact</button></a>
+                <div class="pages" id="pages">
+                    <a href="#home">Home</a>
+                    <a href="#about">About me</a>
+                    <a href="#technologies">Technologies</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 <div class="contact-logo">
                     <a href="https://github.com/aydjay12/" target="_blank"><img src="img/mark-github-24.png" alt=""></a>
                     <a href="https://www.linkedin.com/in/ayo-deji-898308286/" target="_blank"><img src="img/Linkedin.png" alt=""></a>
                     <a href="https://twitter.com/aydjay12" target="_blank"><img src="img/twitter.png" alt=""></a>
                 </div>
-            </div>
+            </section>
             <div class="home-page" id="home">
                 <div class="horizontal-1">
-                    <h2>Hello <img src="img/hi-logo.png" alt="">,</h2>
+                    <h2 class="hello">Hello <img src="img/hi-logo.png" alt="">,</h2>
                     <h2 class="name-is">My name is</h2>
                     <h2 class="name">Ayo D</h2>
                     <h2 class="name-mobile">My name is Ayo D</h2>
-                    <h2>I build things for the web</h2>
+                    <h2 class="build">I build things for the web</h2>
                 </div>
                 <div class="horizontal-2">
                     <img src="img/Deji 2-PhotoRoom.png" alt="">
@@ -661,66 +762,66 @@
                     <img src="img/logos_bootstrap.png" alt="">
                     <img src="img/logos_sass.png" alt="">
                     <img src="img/logos_git-icon.png" alt="">
-                    <img src="img/cib_greensock.png" alt="">
+                    <img src="img/greensock-gsap-icon-seeklogo.com.svg" alt="">
                     <img src="img/vscode-icons_file-type-vscode.png" alt="">
-                    <img src="img/akar-icons_github-fill.png" alt="">
+                    <img src="img/pngegg.png" alt="">
                 </div>
             </div>
             <div class="projects" id="projects">
                 <h1>Projects</h1>
-                <p>Things I've built so far</p>
+                <p class="things">Things I've built so far</p>
                 <div class="project-tiles">
                     <div class="tile-1">
-                        <img src="img/Mandela_Website.png" alt="">
+                        <a href="Nelson Mandela Week/index.html" target="_blank"><img src="img/Mandela_Website.png" alt=""></a>
                         <h2>Unilag Mandela Week</h2>
                         <ul></ul>
                         <p>In this web development project, I collaborated with a cross-functional team to create a modern and user-friendly platform for a high-profile event in the University of Lagos . The event aimed to celebrate an African Icon. This is my sample of the project.</p>
                         <a href="Nelson Mandela Week/index.html" target="_blank"><button>Look it up</button></a>
                     </div>
                     <div class="tile-2">
-                        <img src="img/Fruit_Website.png" alt="">
+                        <a href="Fruit Website/index.html" target="_blank"><img src="img/Fruit_Website.png" alt=""></a>
                         <h2>Lookscout Fruit Website</h2>
                         <ul></ul>
                         <p>Through this personal web development endeavor, I not only honed my technical skills but also created a compelling digital presence that reflects my expertise, creativity, and dedication as a Front End Developer.</p>
                         <a href="Fruit Website/index.html" target="_blank"><button>Look it up</button></a>
                     </div>
                     <div class="tile-3">
-                        <img src="img/Data_Science_School.png" alt="">
+                        <a href="Data_Science_School/index.html" target="_blank"><img src="img/Data_Science_School.png" alt=""></a>
                         <h2>Data Science School</h2>
                         <ul></ul>
                         <p>Collaborated with a client to bring their vision to life through a tailored website, utilizing HTML, CSS, and JavaScript to create a seamless and user-friendly online platform and  deployed the website to a secure hosting environment afterwards.</p>
                         <a href="Data_Science_School/index.html" target="_blank"><button>Look it up</button></a>
                     </div>
                     <div class="tile-4">
-                        <img src="img/E-Commerce_Website.png" alt="">
+                        <a href="ecommerce-product-page-main/index.html" target="_blank"><img src="img/E-Commerce_Website.png" alt=""></a>
                         <h2>E-Commerce Product Page</h2>
                         <ul></ul>
                         <p>Leveraged the power of Vanilla JavaScript to craft a dynamic e-commerce product page personal project, combining HTML, CSS, and JavaScript to design a captivating and responsive user interface that showcases product details, enhances user engagement, and demonstrates front-end expertise.</p>
                         <a href="ecommerce-product-page-main/index.html" target="_blank"><button>Look it up</button></a>
                     </div>
                     <div class="tile-5">
-                        <img src="img/ARUA 2023.png" alt="">
+                        <a href="AURA_FILE/index.html" target="_blank"><img src="img/ARUA 2023.png" alt=""></a>
                         <h2>ARUA 2023</h2>
                         <ul></ul>
                         <p>Successfully executed a client's vision by developing a user-friendly and visually captivating simple website, leveraging HTML, CSS, and JavaScript to create an intuitive and interactive online presence that meets the client's requirements and promotes their brand effectively.</p>
                         <a href="AURA_FILE/index.html" target="_blank"><button>Look it up</button></a>
                     </div>
                     <div class="tile-6">
-                        <img src="img/Interactive_Card.png" alt="">
+                        <a href="interactive-card-details-form-main/index.html" target="_blank"><img src="img/Interactive_Card.png" alt=""></a>
                         <h2>Interactive Card</h2>
                         <ul></ul>
                         <p>Designed and implemented a robust form validation personal project using JavaScript and HTML, enhancing user experience by ensuring accurate and error-free input submission for a seamless interaction.</p>
                         <a href="interactive-card-details-form-main/index.html" target="_blank"><button>Look it up</button></a>
                     </div>
                     <div class="tile-7">
-                        <img src="img/room_website.png" alt="">
+                        <a href="room-homepage-master/index.html" target="_blank"><img src="img/room_website.png" alt=""></a>
                         <h2>Room Homepage</h2>
                         <ul></ul>
                         <p>Implemented a pixel-perfect UI, meticulously crafting each component to reflect a modern and minimalist aesthetic that emphasizes content clarity and visual appeal.</p>
                         <a href="room-homepage-master/index.html" target="_blank"><button>Look it up</button></a>
                     </div>
                     <div class="tile-8">
-                        <img src="img/Snap_Website.png" alt="">
+                        <a href="intro-section-with-dropdown-navigation-main/index.html" target="_blank"><img src="img/Snap_Website.png" alt=""></a>
                         <h2>Snap Homepage</h2>
                         <ul></ul>
                         <p>Created an engaging and minimalist website homepage personal project, utilizing HTML, CSS, and JavaScript to deliver a visually appealing and responsive user interface that effectively communicates key information and showcases my front-end development skills.</p>
@@ -747,17 +848,34 @@
                 </div>
                 <ul></ul>
                 <div class="pages pages-1">
-                    <a href="#home"><button>Home</button></a>
-                    <a href="#about"><button>About me</button></a>
-                    <a href="#technologies"><button>Technologies</button></a>
-                    <a href="#projects"><button>Projects</button></a>
-                    <a href="#contact"><button>Contact</button></a>
+                    <a href="#home">Home</a>
+                    <a href="#about">About me</a>
+                    <a href="#technologies">Technologies</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
         </div>
+        <ul id="menu">
+            <li><a class="arrow" id="arrow" href="#header"></a></li>
+        </ul>
+
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
     <script>
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.defaults({
+        toggleActions: 'restart none none none',
+            markers: false,
+            start: 'top bottom',
+            end: 'bottom top',
+        })
         var arrow = document.getElementById('arrow');
 
         window.onscroll = function() {scrollFunction()};
@@ -771,12 +889,238 @@
         }
 
         // When the user clicks on the button, scroll to the top of the document
-        function arrowClick() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        // function arrowClick() {
+        //     document.body.scrollTop = 0; // For Safari
+        //     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        // }
+
+        document.querySelectorAll(".pages a").forEach((item, index) => {
+            item.addEventListener("click", (event) => {
+                // Prevent the default action
+                event.preventDefault();
+                let target = event.target;
+                let hash = target.hash;
+
+                console.log(hash);
+
+                gsap.to(window, {
+                duration: 1,
+                scrollTo: hash,
+                ease: "Power1.easeInOut"
+                });
+            });
+        });
+
+        document.querySelectorAll("#menu a").forEach((item, index) => {
+            item.addEventListener("click", (event) => {
+                // Prevent the default action
+                event.preventDefault();
+                let target = event.target;
+                let hash = target.hash;
+
+                console.log(hash);
+
+                gsap.to(window, {
+                duration: 1,
+                scrollTo: hash,
+                ease: "Power1.easeInOut"
+                });
+            });
+        });
+
+        // arrow.addEventListener('click', arrowClick);
+
+        // let tl = gsap.timeline()
+
+        // tl.to('#technologies', {
+        //     y: 200,
+        //     yoyo: true,
+        // })
+
+        const lenis = new Lenis()
+
+        lenis.on('scroll', (e) => {
+        console.log(e)
+        })
+
+        function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
         }
 
-        arrow.addEventListener('click', arrowClick);
+        requestAnimationFrame(raf)
+
+        TweenMax.from('.logo', 1,{
+            // scrollTrigger: '.home-page',
+            opacity: 0,
+            x: -20,
+            ease: Expo.easeInOut,
+        })
+        TweenMax.staggerFrom('.pages', 1,{
+            opacity: 0,
+            delay: .3,
+            x: -20,
+            ease: Power3.easeInOut,
+        }, 0.08)
+        TweenMax.from('.contact-logo a', 1,{
+            opacity: 0,
+            delay: .5,
+            x: -20,
+            ease: Expo.easeInOut,
+        })
+        TweenMax.from('.hello', 1,{
+            opacity: 0,
+            delay: 1,
+            x: 20,
+            ease: Expo.easeInOut,
+        })
+        TweenMax.from('.name-is', 1,{
+            opacity: 0,
+            delay: 1.6,
+            y: 20,
+            ease: Expo.easeInOut,
+        })
+        TweenMax.from('.name', 1,{
+            opacity: 0,
+            delay: 2.2,
+            y: -20,
+            ease: Expo.easeInOut,
+        })
+        TweenMax.from('.build', 1,{
+            opacity: 0,
+            delay: 2.8,
+            x: -20,
+            ease: Expo.easeInOut,
+        })
+        TweenMax.from('.about-me h1', 1,{
+            scrollTrigger: '.about-me h1',
+            opacity: 0,
+            x: -20,
+            duration: 4,
+            ease: Expo.easeInOut,
+            delay: .2,
+        })
+        TweenMax.from('.about-me p', 1,{
+            scrollTrigger: '.about-me p',
+            opacity: 0,
+            y: -20,
+            ease: Expo.easeInOut,
+            delay: .3,
+        })
+        TweenMax.from('.experience h1', 1,{
+            scrollTrigger: '.experience h1',
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut,
+            delay: .4,
+        })
+        TweenMax.from('.education h1', 1,{
+            scrollTrigger: '.education h1',
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut,
+            delay: .4,
+        })
+        TweenMax.from('.row-1 h2', 1,{
+            scrollTrigger: '.row-1 h2',
+            opacity: 0,
+            x: -20,
+            ease: Expo.easeInOut,
+            delay: .6,
+        })
+        TweenMax.from('.row-1 p', 1,{
+            scrollTrigger: '.row-1 p',
+            opacity: 0,
+            x: 20,
+            ease: Expo.easeInOut,
+            delay: .6,
+        })
+        TweenMax.from('.row-2 h6', 1,{
+            scrollTrigger: '.row-2 h6',
+            opacity: 0,
+            x: 20,
+            ease: Expo.easeInOut,
+            delay: .6,
+        })
+        TweenMax.from('.technologies h1', 1,{
+            scrollTrigger: '.technologies h1',
+            opacity: 0,
+            x: 40,
+            ease: Expo.easeInOut,
+            delay: .2,
+        })
+        TweenMax.from('.technologies p', 1,{
+            scrollTrigger: '.technologies p',
+            opacity: 0,
+            x: -40,
+            ease: Expo.easeInOut,
+            delay: .3,
+        })
+        TweenMax.from('.tech-logos img', 1,{
+            scrollTrigger: '.technologies p',
+            opacity: 0,
+            y: 70,
+            ease: Expo.easeInOut,
+            delay: .5,
+        })
+        TweenMax.from('.projects h1', 1,{
+            scrollTrigger: '.projects h1',
+            opacity: 0,
+            x: 40,
+            ease: Expo.easeInOut,
+            delay: .2,
+        })
+        TweenMax.from('.things', 1,{
+            scrollTrigger: '.things',
+            opacity: 0,
+            x: -40,
+            ease: Expo.easeInOut,
+            delay: .3,
+        })
+        TweenMax.from('.projects div', 1,{
+            scrollTrigger: '.projects div',
+            y: -40,
+            opacity: 0,
+            ease: Expo.easeInOut,
+            delay: .5,
+        })
+        TweenMax.from('.projects div img', 1,{
+            scrollTrigger: '.projects div img',
+            opacity: 0,
+            scale: .6,
+            y: 50,
+            ease: Expo.easeInOut,
+            delay: .4,
+        })
+        TweenMax.from('.projects div h2', 1,{
+            scrollTrigger: '.projects div img',
+            opacity: 0,
+            x: -40,
+            ease: Expo.easeInOut,
+            delay: 1.2,
+        })
+        TweenMax.from('.projects div ul', 1,{
+            scrollTrigger: '.projects div img',
+            opacity: 0,
+            x: 200,
+            ease: Expo.easeInOut,
+            delay: 1.8,
+        })
+        TweenMax.from('.projects div p', 1,{
+            scrollTrigger: '.projects div img',
+            opacity: 0,
+            y: -40,
+            ease: Expo.easeInOut,
+            delay: 2.4,
+        })
+        TweenMax.from('.projects div button', 1,{
+            scrollTrigger: '.projects div img',
+            opacity: 0,
+            y: 10,
+            ease: Expo.easeInOut,
+            delay: 2.5,
+        })
+
     </script>
     
 </body>
