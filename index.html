@@ -699,7 +699,7 @@
             </section>
             <div class="home-page" id="home">
                 <div class="horizontal-1">
-                    <h2 class="hello">Hello <img src="img/hi-logo.png" alt="">,</h2>
+                    <h2 class="hello">Hi <img src="img/hi-logo.png" alt="">,</h2>
                     <h2 class="name-is">My name is</h2>
                     <h2 class="name">Ayo D</h2>
                     <h2 class="name-mobile">My name is Ayo D</h2>
@@ -1119,6 +1119,13 @@
             y: 10,
             ease: Expo.easeInOut,
             delay: 2.5,
+        })
+        TweenMax.from('.contact h1', 1,{
+            scrollTrigger: '.contact',
+            opacity: 0,
+            y: 40,
+            ease: Expo.easeInOut,
+            delay: .5,
         })
 
     </script>
